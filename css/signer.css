@@ -1,0 +1,421 @@
+.main-content {
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0 6rem 0;
+}
+
+.page-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.page-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.form-section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.span-2 {
+    grid-column: span 2;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-color-translucent, rgba(120, 120, 120, 0.2));
+}
+
+input[type="file"] {
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 1rem;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-primary);
+    border-color: var(--primary-color);
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--bg-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checkbox-group:hover {
+    border-color: var(--primary-color);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 1.25em;
+    height: 1.25em;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.button-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 58px;
+    background-color: var(--primary-color);
+    color: var(--bg-primary);
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(120, 120, 120, 0.2);
+}
+
+.button-primary:disabled {
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: var(--shadow);
+    opacity: 0.7;
+}
+
+.button-primary .spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--bg-secondary);
+    border-top-color: var(--bg-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.button-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.button-secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.extras-section {
+    margin-bottom: 2.5rem;
+}
+
+.extras-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.extras-toggle:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(120, 120, 120, 0.1);
+}
+
+.extras-toggle:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-color-translucent, rgba(120, 120, 120, 0.2));
+}
+
+.chevron-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-primary);
+    stroke-width: 2;
+    fill: none;
+    transition: transform 0.3s ease;
+}
+
+.extras-content {
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.extras-content .form-section {
+    margin-bottom: 1.5rem;
+}
+
+.extras-content .form-section:last-child {
+    margin-bottom: 0;
+}
+
+#results {
+    margin-top: 2.5rem;
+}
+
+.result-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.result-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: var(--bg-primary);
+}
+
+.result-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+}
+
+.result-info p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.result-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    animation: slideIn 0.4s ease-out forwards;
+}
+
+.notification.error {
+    background-color: #991b1b;
+    border: 1px solid #fecaca;
+    color: #fef2f2;
+}
+
+.notification.info {
+    background-color: #1e40af;
+    border: 1px solid #bfdbfe;
+    color: #eff6ff;
+}
+
+[data-theme="light"] .notification.error {
+    background-color: #fef2f2;
+    border-color: #fecaca;
+    color: #991b1b;
+}
+
+[data-theme="light"] .notification.info {
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1e40af;
+}
+
+.notification p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.notification.fade-out {
+    animation: fadeOut 0.4s ease-in forwards;
+}
+
+.notification button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: inherit;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.notification button:hover {
+    opacity: 1;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem 0 4rem 0;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group.span-2 {
+        grid-column: span 1;
+    }
+    
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-section {
+        padding: 1.5rem;
+    }
+    
+    #notification-container {
+        right: 10px;
+        left: 10px;
+        width: auto;
+    }
+}
