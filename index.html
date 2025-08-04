@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sideloading.org is your central hub for guides, resources, and community support for all things sideloading.">
     <title>Sideloading.org - Home</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
@@ -31,7 +38,9 @@
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h2 class="sidebar-title">Navigation</h2>
-                <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation"><svg viewBox="0 0 24 24"><path d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"/></svg></button>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation">
+                    <svg viewBox="0 0 24 24"><path d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"/></svg>
+                </button>
             </div>
             <div class="sidebar-content">
                 <nav>
@@ -50,27 +59,70 @@
             <h1 class="title">Sideloading</h1>
             <p class="catchline">Your central hub for all things sideloading. Guides, resources, and community support, all in one place.</p>
             <a href="#" class="cta-button">Get Started</a>
+
             <div class="introduction">
                 <div class="intro-content">
                     <h2 class="intro-title">About Sideloading.org</h2>
                     <p class="intro-text">We're here to revolutionize the way you think about sideloading. For a long time, sideloading has revolved around separate projects fighting for relevance and income, we are here to undo the damage caused by this...</p>
                 </div>
             </div>
+
             <div class="carousel-section">
                 <h2 class="carousel-title">Guides & Support</h2>
                 <div class="carousel-container" id="carouselContainer">
                     <div class="carousel-track" id="carouselTrack">
-                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3 class="guide-title">Learn the Trade</h3><p class="guide-description">Sideloading has taken time to perfect, even longer to understand. Our guides make it simple.</p><a href="#" class="guide-button">Read Guide</a></div></div>
-                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3 class="guide-title">Unified Resources</h3><p class="guide-description">Access a curated collection of tools and resources from across the community.</p><a href="#" class="guide-button">View Resources</a></div></div>
-                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3 class="guide-title">Easy-to-Follow Guides</h3><p class="guide-description">Step-by-step instructions to get you started, from beginner basics to advanced techniques.</p><a href="#" class="guide-button">Browse Guides</a></div></div>
-                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><h3 class="guide-title">Community Support</h3><p class="guide-description">If you've read the guides and still need help, our community is here for you!</p><a href="#" class="guide-button">Join Our Server!</a></div></div>
+                        <div class="carousel-slide">
+                            <div class="guide-card">
+                                <div class="guide-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                </div>
+                                <h3 class="guide-title">Learn the Trade</h3>
+                                <p class="guide-description">Sideloading has taken time to perfect, even longer to understand. Our guides make it simple.</p>
+                                <a href="#" class="guide-button">Read Guide</a>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="guide-card">
+                                <div class="guide-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <h3 class="guide-title">Unified Resources</h3>
+                                <p class="guide-description">Access a curated collection of tools and resources from across the community.</p>
+                                <a href="#" class="guide-button">View Resources</a>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="guide-card">
+                                <div class="guide-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <h3 class="guide-title">Easy-to-Follow Guides</h3>
+                                <p class="guide-description">Step-by-step instructions to get you started, from beginner basics to advanced techniques.</p>
+                                <a href="#" class="guide-button">Browse Guides</a>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="guide-card">
+                                <div class="guide-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                </div>
+                                <h3 class="guide-title">Community Support</h3>
+                                <p class="guide-description">If you've read the guides and still need help, our community is here for you!</p>
+                                <a href="#" class="guide-button">Join Our Server!</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-scrollbar"><div class="carousel-scrollbar-track"><div class="carousel-scrollbar-thumb" id="scrollbarThumb"></div></div></div>
+                <div class="carousel-scrollbar">
+                    <div class="carousel-scrollbar-track">
+                        <div class="carousel-scrollbar-thumb" id="scrollbarThumb"></div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
-    <script src="js/general.js"></script>
-    <script src="js/home.js"></script>
+
+    <script src="js/general.js" defer></script>
+    <script src="js/home.js" defer></script>
 </body>
 </html>
