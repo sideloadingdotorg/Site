@@ -14,30 +14,30 @@
     <div class="container">
         <header class="header">
             <div class="header-left">
-                <button class="hamburger-menu circle-button" id="hamburgerMenu" aria-label="Open navigation menu" aria-controls="sidebar">
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
                     <div class="hamburger-line"></div>
                     <div class="hamburger-line"></div>
                     <div class="hamburger-line"></div>
                 </button>
             </div>
             <div class="header-right">
-                <button class="theme-toggle circle-button" id="themeToggle" aria-label="Toggle dark/light theme">
-                    <svg class="sun-icon" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/></svg>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
+                    <svg class="moon-icon" style="display: none;" viewBox="0 0 24 24"><path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/></svg>
                 </button>
             </div>
         </header>
 
-        <div class="sidebar" id="sidebar" aria-modal="true" role="dialog" aria-label="Main navigation">
+        <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h2 class="sidebar-title">Navigation</h2>
-                <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation" type="button"><svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"/></svg></button>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation"><svg viewBox="0 0 24 24"><path d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"/></svg></button>
             </div>
             <div class="sidebar-content">
                 <nav>
                     <ul class="sidebar-nav">
                         <li class="sidebar-nav-item"><a href="index.html" class="sidebar-nav-link">Home</a></li>
-                        <li class="sidebar-nav-item"><a href="signer.html" class="sidebar-nav-link active" aria-current="page">Signer</a></li>
+                        <li class="sidebar-nav-item"><a href="signer.html" class="sidebar-nav-link active">Signer</a></li>
                         <li class="sidebar-nav-item"><a href="#" class="sidebar-nav-link">Sources</a></li>
                         <li class="sidebar-nav-item"><a href="#" class="sidebar-nav-link">Our Resources</a></li>
                     </ul>
@@ -49,36 +49,21 @@
         <main class="main-content">
             <h1 class="page-title">Online IPA Signer</h1>
             <p class="page-description">Upload your IPA, certificate, and provisioning profile to sign your apps directly in the browser.</p>
-            <form id="signForm" method="POST" action="/sign" enctype="multipart/form-data" autocomplete="off">
+            <form id="signForm" method="POST" action="/sign" enctype="multipart/form-data" novalidate autocomplete="off">
                 <div class="form-section">
                     <h2 class="section-title">1. Core Files</h2>
                     <div class="form-grid">
-                        <div class="form-group span-2">
-                            <label for="ipa_files">IPA Files (up to 10)</label>
-                            <input type="file" id="ipa_files" name="ipa[]" multiple accept=".ipa">
-                        </div>
-                        <div class="form-group span-2">
-                            <label for="ipa_links">Or Direct IPA Links (comma-separated)</label>
-                            <input type="text" id="ipa_links" name="ipa_direct_links" placeholder="http://example.com/app1.ipa, http://example.com/app2.ipa">
-                        </div>
-                        <div class="form-group">
-                            <label for="p12_file">P12 Certificate</label>
-                            <input type="file" id="p12_file" name="p12" accept=".p12" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="p12_pass">P12 Password</label>
-                            <input type="password" id="p12_pass" name="p12_password">
-                        </div>
-                        <div class="form-group span-2">
-                            <label for="provision_file">Mobile Provision</label>
-                            <input type="file" id="provision_file" name="mobileprovision" accept=".mobileprovision" required>
-                        </div>
+                        <div class="form-group span-2"><label for="ipa_files">IPA Files (up to 10)</label><input type="file" id="ipa_files" name="ipa[]" multiple accept=".ipa"></div>
+                        <div class="form-group span-2"><label for="ipa_links">Or Direct IPA Links (comma-separated)</label><input type="text" id="ipa_links" name="ipa_direct_links" placeholder="http://example.com/app1.ipa"></div>
+                        <div class="form-group"><label for="p12_file">P12 Certificate</label><input type="file" id="p12_file" name="p12" accept=".p12" required></div>
+                        <div class="form-group"><label for="p12_pass">P12 Password</label><input type="password" id="p12_pass" name="p12_password"></div>
+                        <div class="form-group span-2"><label for="provision_file">Mobile Provision</label><input type="file" id="provision_file" name="mobileprovision" accept=".mobileprovision" required></div>
                     </div>
                 </div>
                 <div class="extras-section">
-                    <button type="button" class="extras-toggle" id="extrasToggle" aria-expanded="false" aria-controls="extrasContent">
+                    <button type="button" class="extras-toggle" id="extrasToggle">
                         <span>Extras</span>
-                        <svg class="chevron-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+                        <svg class="chevron-icon" viewBox="0 0 24 24">
                             <path d="M6 9l6 6 6-6"/>
                         </svg>
                     </button>
@@ -86,79 +71,31 @@
                         <div class="form-section">
                             <h2 class="section-title">In-App Modifications</h2>
                             <div class="form-grid">
-                                <div class="form-group">
-                                    <label for="app_name">Custom App Name</label>
-                                    <input type="text" id="app_name" name="cyan_name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="app_version">Custom Version</label>
-                                    <input type="text" id="app_version" name="cyan_version" placeholder="e.g., 1.2.3">
-                                </div>
-                                <div class="form-group">
-                                    <label for="bundle_id">Custom Bundle ID</label>
-                                    <input type="text" id="bundle_id" name="cyan_bundle_id" placeholder="e.g., com.company.appname">
-                                </div>
-                                <div class="form-group">
-                                    <label for="min_ios">Minimum iOS Version</label>
-                                    <input type="text" id="min_ios" name="cyan_minimum" placeholder="e.g., 14.0">
-                                </div>
-                                <div class="form-group span-2">
-                                    <label for="tweaks">Optional Tweaks (.deb, .dylib)</label>
-                                    <input type="file" id="tweaks" name="cyan_tweaks" multiple accept=".deb,.dylib">
-                                </div>
-                                <div class="form-group span-2">
-                                    <label for="icon">Optional Icon (.png, .jpg)</label>
-                                    <input type="file" id="icon" name="cyan_icon" accept=".png,.jpg,.jpeg">
-                                </div>
+                                <div class="form-group"><label for="app_name">Custom App Name</label><input type="text" id="app_name" name="cyan_name"></div>
+                                <div class="form-group"><label for="app_version">Custom Version</label><input type="text" id="app_version" name="cyan_version" placeholder="e.g., 1.2.3"></div>
+                                <div class="form-group"><label for="bundle_id">Custom Bundle ID</label><input type="text" id="bundle_id" name="cyan_bundle_id" placeholder="e.g., com.company.appname"></div>
+                                <div class="form-group"><label for="min_ios">Minimum iOS Version</label><input type="text" id="min_ios" name="cyan_minimum" placeholder="e.g., 14.0"></div>
+                                <div class="form-group span-2"><label for="tweaks">Optional Tweaks (.deb, .dylib)</label><input type="file" id="tweaks" name="cyan_tweaks" multiple accept=".deb,.dylib"></div>
+                                <div class="form-group span-2"><label for="icon">Optional Icon (.png, .jpg)</label><input type="file" id="icon" name="cyan_icon" accept=".png,.jpg,.jpeg"></div>
                             </div>
                         </div>
                         <div class="form-section">
                             <h2 class="section-title">Advanced Options</h2>
                             <div class="checkbox-grid">
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="remove_supported" name="cyan_remove_supported" value="1">
-                                    <label for="remove_supported">Remove Supported Devices</label>
-                                </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="no_watch" name="cyan_no_watch" value="1">
-                                    <label for="no_watch">No Watch App</label>
-                                </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="enable_docs" name="cyan_enable_documents" value="1">
-                                    <label for="enable_docs">Enable Documents</label>
-                                </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="fakesign" name="cyan_fakesign" value="1">
-                                    <label for="fakesign">Fake Sign</label>
-                                </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="thin_binary" name="cyan_thin" value="1">
-                                    <label for="thin_binary">Thin Binary</label>
-                                </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="remove_ext" name="cyan_remove_extensions" value="1">
-                                    <label for="remove_ext">Remove Extensions</label>
-                                </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="ignore_enc" name="cyan_ignore_encrypted" value="1">
-                                    <label for="ignore_enc">Ignore Encrypted</label>
-                                </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="inject_dylibs" name="inject_dylibs" value="1">
-                                    <label for="inject_dylibs">Inject Dylibs</label>
-                                </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="remove_embedded" name="remove_embedded" value="1">
-                                    <label for="remove_embedded">Remove Embedded Profile</label>
-                                </div>
+                                <div class="checkbox-group"><input type="checkbox" id="remove_supported" name="cyan_remove_supported" value="1"><label for="remove_supported">Remove Supported Devices</label></div>
+                                <div class="checkbox-group"><input type="checkbox" id="no_watch" name="cyan_no_watch" value="1"><label for="no_watch">No Watch App</label></div>
+                                <div class="checkbox-group"><input type="checkbox" id="enable_docs" name="cyan_enable_documents" value="1"><label for="enable_docs">Enable Documents</label></div>
+                                <div class="checkbox-group"><input type="checkbox" id="fakesign" name="cyan_fakesign" value="1"><label for="fakesign">Fake Sign</label></div>
+                                <div class="checkbox-group"><input type="checkbox" id="thin_binary" name="cyan_thin" value="1"><label for="thin_binary">Thin Binary</label></div>
+                                <div class="checkbox-group"><input type="checkbox" id="remove_ext" name="cyan_remove_extensions" value="1"><label for="remove_ext">Remove Extensions</label></div>
+                                <div class="checkbox-group"><input type="checkbox" id="ignore_enc" name="cyan_ignore_encrypted" value="1"><label for="ignore_enc">Ignore Encrypted</label></div>
+                                <div class="checkbox-group"><input type="checkbox" id="inject_dylibs" name="inject_dylibs" value="1"><label for="inject_dylibs">Inject Dylibs</label></div>
+                                <div class="checkbox-group"><input type="checkbox" id="remove_embedded" name="remove_embedded" value="1"><label for="remove_embedded">Remove Embedded Profile</label></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="button-primary" id="submitButton">
-                    <span class="button-text">Sign IPAs</span>
-                    <div class="spinner" aria-hidden="true" hidden></div>
-                </button>
+                <button type="submit" class="button-primary" id="submitButton"><span class="button-text">Sign IPAs</span><div class="spinner" hidden></div></button>
             </form>
             <div id="results"></div>
         </main>
@@ -171,28 +108,21 @@
         const buttonText = submitButton.querySelector('.button-text');
         const buttonSpinner = submitButton.querySelector('.spinner');
         const resultsDiv = document.getElementById('results');
-
         function showNotification(message, type = 'error') {
             const container = document.getElementById('notification-container');
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
-
             const messageP = document.createElement('p');
             messageP.textContent = message;
-
             const closeButton = document.createElement('button');
-            closeButton.innerHTML = '&times;'; // Use HTML entity for 'x'
-            closeButton.setAttribute('aria-label', 'Close notification');
+            closeButton.innerHTML = '×';
             closeButton.onclick = () => {
                 notification.classList.add('fade-out');
                 notification.addEventListener('animationend', () => notification.remove());
             };
-
             notification.appendChild(messageP);
             notification.appendChild(closeButton);
             container.appendChild(notification);
-
-            // Auto-remove after 5 seconds
             setTimeout(() => {
                 if (document.body.contains(notification)) {
                     notification.classList.add('fade-out');
@@ -200,70 +130,55 @@
                 }
             }, 5000);
         }
-
         window.addEventListener('load', () => {
             signForm.reset();
             resultsDiv.innerHTML = '';
         });
-
         signForm.addEventListener('submit', async function(event) {
             event.preventDefault();
-
-            // Disable button and show spinner
             submitButton.disabled = true;
             buttonText.hidden = true;
             buttonSpinner.hidden = false;
-            buttonSpinner.setAttribute('aria-hidden', 'false');
-
-            resultsDiv.innerHTML = ''; // Clear previous results
-
+            resultsDiv.innerHTML = '';
             const formData = new FormData(this);
-
             try {
                 const response = await fetch('/sign', { method: 'POST', body: formData });
                 const data = await response.json();
-
                 if (response.ok && data.success) {
                     if (data.results && data.results.length > 0) {
                         const resultsTitle = document.createElement('h2');
                         resultsTitle.className = 'section-title';
                         resultsTitle.textContent = 'Signing Complete!';
                         resultsDiv.appendChild(resultsTitle);
-
                         data.results.forEach(result => {
                             const card = document.createElement('div');
                             card.className = 'result-card';
                             card.innerHTML = `
                                 <div class="result-header">
-                                    <img src="${result.iconUrl || 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23a0a0a0\'%3E%3Cpath d=\'M6 3C4.343 3 3 4.343 3 6v12c0 1.657 1.343 3 3 3h12c1.657 0 3-1.343 3-3V6c0-1.657-1.343-3-3-3H6zm.75 6.75a.75.75 0 000 1.5h10.5a.75.75 0 000-1.5H6.75zM6.75 14.25a.75.75 0 000 1.5h10.5a.75.75 0 000-1.5H6.75z\'/%3E%3C/svg%3E'}" 
-                                         alt="App Icon" class="result-icon" loading="lazy">
+                                    <img src="${result.iconUrl || ''}" alt="App Icon" class="result-icon">
                                     <div class="result-info">
-                                        <h3>${result.displayName || 'Unnamed App'}</h3>
-                                        <p>${result.bundleId || 'N/A'} • v${result.bundleVersion || 'N/A'}</p>
+                                        <h3>${result.displayName}</h3>
+                                        <p>${result.bundleId} • v${result.bundleVersion}</p>
                                     </div>
                                 </div>
                                 <div class="result-links">
-                                    <a href="${result.signedIpaUrl}" class="button-secondary" target="_blank" download="${result.displayName || 'signed_app'}.ipa">Download IPA</a>
+                                    <a href="${result.signedIpaUrl}" class="button-secondary" target="_blank">Download IPA</a>
                                     <a href="${result.installLink}" class="button-primary" target="_blank">Install via Manifest</a>
                                 </div>`;
                             resultsDiv.appendChild(card);
                         });
-                        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll to results
                     } else {
-                        showNotification('Signing completed, but no results were returned. This might indicate an issue with the IPA content.', 'info');
+                        showNotification('Signing completed, but no results were returned.', 'info');
                     }
                 } else {
-                    showNotification(data.error || 'An unknown server error occurred during signing. Please check your inputs and try again.');
+                    showNotification(data.error || 'An unknown server error occurred.');
                 }
             } catch (err) {
-                console.error('Submission Error:', err);
-                showNotification('A network or client-side error occurred. Please check your internet connection and try again. Details: ' + err.message);
+                showNotification('A network or client-side error occurred: ' + err.message);
             } finally {
-                // Re-enable button and hide spinner
                 submitButton.disabled = false;
                 buttonText.hidden = false;
                 buttonSpinner.hidden = true;
-                buttonSpinner.setAttribute('aria-hidden', 'true');
             }
         });
         
@@ -272,7 +187,7 @@
         const chevronIcon = extrasToggle.querySelector('.chevron-icon');
         
         extrasToggle.addEventListener('click', function() {
-            const isExpanded = extrasContent.style.display === 'block'; // Check current state
+            const isExpanded = extrasContent.style.display === 'block';
             
             if (isExpanded) {
                 extrasContent.style.display = 'none';
@@ -285,7 +200,6 @@
             }
         });
         
-        // Initial state for extras content on page load
         extrasContent.style.display = 'none';
         extrasToggle.setAttribute('aria-expanded', 'false');
     </script>
