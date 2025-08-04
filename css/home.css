@@ -1,119 +1,97 @@
 .main-content {
     text-align: center;
-    padding-block: var(--space-xl) calc(var(--space-xl) + 2rem);
+    padding: 4rem 0 6rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-grow: 1;
 }
 
 .title {
     font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: var(--font-weight-bold);
-    color: var(--clr-primary);
-    margin-bottom: var(--space-lg);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
     line-height: 1.1;
-    letter-spacing: -0.03em;
 }
 
 .catchline {
     font-size: clamp(1.25rem, 3vw, 1.75rem);
-    color: var(--clr-text-secondary);
+    color: var(--text-secondary);
     max-width: 700px;
-    margin-inline: auto;
-    margin-bottom: var(--space-xl);
-    font-weight: var(--font-weight-regular);
+    margin: 0 auto 4rem;
+    font-weight: 400;
     line-height: 1.5;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--clr-primary);
-    color: var(--clr-background-primary);
-    padding: var(--space-sm) 2.5rem;
-    border-radius: var(--border-radius-md);
+    background-color: var(--primary-color);
+    color: var(--bg-primary);
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: var(--font-weight-semibold);
+    font-weight: 600;
     font-size: 1.1rem;
-    transition: all var(--transition-speed) var(--transition-easing);
-    box-shadow: 0 4px 10px var(--clr-shadow-dark);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
     border: none;
     cursor: pointer;
 }
 
-[data-theme="light"] .cta-button {
-    box-shadow: 0 4px 10px var(--clr-shadow-light);
-}
-
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px var(--clr-shadow-dark);
-}
-
-[data-theme="light"] .cta-button:hover {
-    box-shadow: 0 8px 25px var(--clr-shadow-light);
+    box-shadow: 0 8px 25px rgba(120, 120, 120, 0.2);
 }
 
 .introduction {
-    margin-block: calc(var(--space-xl) + 3rem);
-    max-width: 900px;
-    margin-inline: auto;
-    padding-inline: var(--space-lg);
+    margin: 6rem auto;
+    max-width: 800px;
+    padding: 0 2rem;
 }
 
 .intro-content {
     text-align: center;
-    background: var(--clr-background-secondary);
-    padding: var(--space-xl);
-    border-radius: var(--border-radius-lg);
-    border: 1px solid var(--clr-border);
-    transition: all var(--transition-speed) var(--transition-easing);
-    box-shadow: 0 2px 8px var(--clr-shadow-dark); /* Lighter shadow by default */
-}
-
-[data-theme="light"] .intro-content {
-    box-shadow: 0 2px 8px var(--clr-shadow-light);
+    background: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
 
 .intro-content:hover {
-    transform: translateY(-4px); /* Increased lift on hover */
-    box-shadow: 0 10px 30px var(--clr-shadow-dark); /* More pronounced shadow */
-    border-color: var(--clr-primary);
-}
-
-[data-theme="light"] .intro-content:hover {
-    box-shadow: 0 10px 30px var(--clr-shadow-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
 }
 
 .intro-title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    font-weight: var(--font-weight-semibold);
-    color: var(--clr-primary);
-    margin-bottom: var(--space-md);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
 }
 
 .intro-text {
-    font-size: clamp(1.1rem, 2vw, 1.2rem);
-    color: var(--clr-text-secondary);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
     line-height: 1.7;
     max-width: 600px;
-    margin-inline: auto;
+    margin: 0 auto;
 }
 
 .carousel-section {
-    margin-block: calc(var(--space-xl) + 3rem);
+    margin: 6rem auto;
     max-width: 1200px;
-    margin-inline: auto;
-    padding-inline: var(--space-lg);
+    padding: 0 2rem;
     width: 100%;
     overflow: hidden;
 }
 
 .carousel-title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    font-weight: var(--font-weight-semibold);
-    color: var(--clr-primary);
-    margin-bottom: var(--space-xl);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
     text-align: center;
 }
 
@@ -121,18 +99,13 @@
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
-    border-radius: var(--border-radius-lg);
-    background: var(--clr-background-secondary);
-    padding: var(--space-lg);
+    border-radius: 20px;
+    background: var(--bg-secondary);
+    padding: 2rem;
     width: 100%;
     max-width: 100%;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    box-shadow: 0 2px 8px var(--clr-shadow-dark);
-}
-
-[data-theme="light"] .carousel-container {
-    box-shadow: 0 2px 8px var(--clr-shadow-light);
 }
 
 .carousel-container::-webkit-scrollbar {
@@ -142,212 +115,182 @@
 .carousel-scrollbar {
     position: relative;
     height: 12px;
-    background: var(--clr-border); /* Track color slightly changed to border */
+    background: var(--bg-secondary);
     border-radius: 6px;
-    margin-top: var(--space-sm);
+    margin-top: 1rem;
     overflow: hidden;
-    border: 1px solid var(--clr-border);
+    border: 1px solid var(--border-color);
 }
 
 .carousel-scrollbar-track {
     position: relative;
     height: 100%;
-    background: transparent; /* Track is transparent, only thumb shows */
+    background: var(--bg-secondary);
     border-radius: 6px;
 }
 
 .carousel-scrollbar-thumb {
     position: absolute;
     height: 8px;
-    background-color: var(--clr-primary);
+    background-color: var(--primary-color);
     border-radius: 4px;
     top: 2px;
-    cursor: grab; /* Indicates draggable */
-    transition: all var(--transition-speed) var(--transition-easing);
+    cursor: pointer;
+    transition: all 0.3s ease;
     min-width: 40px;
 }
 
 .carousel-scrollbar-thumb:hover {
-    background-color: var(--clr-primary-hover);
+    background-color: var(--primary-hover);
     transform: scaleY(1.2);
-    cursor: grabbing; /* Indicates active drag */
 }
 
 .carousel-scrollbar-thumb:active {
-    background-color: var(--clr-primary-hover);
-    cursor: grabbing;
+    background-color: var(--primary-hover);
 }
 
 .carousel-track {
     display: flex;
-    gap: var(--space-xl); /* Increased gap for visual breathing room */
+    gap: 3rem;
     width: max-content;
     min-width: 100%;
-    padding-bottom: var(--space-sm); /* Prevents scrollbar from overlapping content slightly */
 }
 
 .carousel-slide {
-    min-width: 320px; /* Slightly adjusted minimum width */
+    min-width: 300px;
     flex-shrink: 0;
-    width: 320px;
+    width: 300px;
     display: flex;
     justify-content: center;
 }
 
 .guide-card {
-    background: var(--clr-background-primary);
-    border: 1px solid var(--clr-border);
-    border-radius: var(--border-radius-lg);
-    padding: var(--space-lg);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
     text-align: center;
-    transition: all var(--transition-speed) var(--transition-easing);
+    transition: all 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     max-width: 100%;
     width: 100%;
-    box-shadow: 0 4px 10px var(--clr-shadow-dark);
-}
-
-[data-theme="light"] .guide-card {
-    box-shadow: 0 4px 10px var(--clr-shadow-light);
 }
 
 .guide-card:hover {
-    transform: translateY(-6px); /* More noticeable lift */
-    box-shadow: 0 12px 25px var(--clr-shadow-dark); /* Stronger shadow on hover */
-    border-color: var(--clr-primary);
-}
-
-[data-theme="light"] .guide-card:hover {
-    box-shadow: 0 12px 25px var(--clr-shadow-light);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
 }
 
 .guide-icon {
     width: 64px;
     height: 64px;
-    background-color: var(--clr-primary);
-    border-radius: var(--border-radius-md); /* Square icon with rounded corners */
+    background-color: var(--primary-color);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-inline: auto;
-    margin-bottom: var(--space-md);
+    margin: 0 auto 1.5rem;
 }
 
 .guide-icon svg {
     width: 32px;
     height: 32px;
-    fill: var(--clr-background-primary);
+    fill: var(--bg-primary);
 }
 
 .guide-title {
-    font-size: var(--space-md);
-    font-weight: var(--font-weight-semibold);
-    color: var(--clr-text-primary);
-    margin-bottom: var(--space-sm);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
 }
 
 .guide-description {
-    color: var(--clr-text-secondary);
-    line-height: var(--line-height-base);
-    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
     flex-grow: 1;
 }
 
 .guide-button {
     display: inline-block;
-    background-color: var(--clr-primary);
-    color: var(--clr-background-primary);
-    padding: 0.75rem var(--space-md);
-    border-radius: var(--border-radius-sm);
+    background-color: var(--primary-color);
+    color: var(--bg-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: var(--font-weight-medium);
+    font-weight: 500;
     font-size: 0.95rem;
-    transition: all var(--transition-speed) var(--transition-easing);
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    box-shadow: 0 2px 5px var(--clr-shadow-dark);
-}
-
-[data-theme="light"] .guide-button {
-    box-shadow: 0 2px 5px var(--clr-shadow-light);
 }
 
 .guide-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px var(--clr-shadow-dark);
-    background-color: var(--clr-primary-hover);
+    box-shadow: 0 4px 15px rgba(120, 120, 120, 0.2);
 }
 
-[data-theme="light"] .guide-button:hover {
-    box-shadow: 0 6px 15px var(--clr-shadow-light);
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .main-content {
-        padding-block: var(--space-lg) var(--space-xl);
+        padding: 2rem 0 3rem 0;
     }
     
     .introduction {
-        margin-block: var(--space-xl);
-        padding-inline: var(--space-sm);
+        margin: 3rem auto;
+        padding: 0 1rem;
     }
     
     .intro-content {
-        padding: var(--space-lg) var(--space-md);
+        padding: 2rem 1.5rem;
     }
     
     .intro-title,
     .carousel-title {
-        font-size: var(--space-lg);
+        font-size: 2rem;
     }
     
     .intro-text {
-        font-size: var(--font-size-base);
+        font-size: 1.1rem;
     }
     
     .carousel-section {
-        margin-block: var(--space-xl);
-        padding-inline: var(--space-xs); /* Tighter padding for very small pps */
+        margin: 3rem auto;
+        padding: 0 0.5rem;
+        max-width: 100%;
     }
     
     .carousel-container {
-        padding: var(--space-sm);
+        padding: 1rem;
+        margin: 0;
     }
     
-    .carousel-track {
-        gap: var(--space-md);
-    }
-
     .carousel-slide {
         min-width: 280px;
         width: 280px;
     }
     
+    .carousel-track {
+        gap: 1.5rem;
+    }
+    
     .guide-card {
-        padding: var(--space-md);
+        padding: 1rem;
+        margin: 0;
     }
     
     .guide-title {
         font-size: 1.25rem;
     }
-
-    .guide-icon {
-        width: 56px;
-        height: 56px;
-    }
-    .guide-icon svg {
-        width: 28px;
-        height: 28px;
-    }
 }
 
 @media (min-width: 1200px) {
     .main-content {
-        padding-block: calc(var(--space-xl) + 2rem) calc(var(--space-xl) + 4rem);
+        padding: 6rem 0 8rem 0;
     }
     
     .title {
@@ -360,8 +303,8 @@
     }
     
     .introduction {
-        max-width: 1000px;
-        margin-block: calc(var(--space-xl) + 4rem);
+        max-width: 900px;
+        margin: 8rem auto;
     }
     
     .intro-title,
@@ -375,21 +318,6 @@
     }
     
     .carousel-section {
-        margin-block: calc(var(--space-xl) + 4rem);
-    }
-
-    .carousel-slide {
-        min-width: 350px; /* Wider cards on larger screens */
-        width: 350px;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1199px) {
-    .introduction {
-        max-width: 850px;
-        padding-inline: var(--space-lg);
-    }
-    .carousel-section {
-        padding-inline: var(--space-md);
+        margin: 8rem auto;
     }
 }
