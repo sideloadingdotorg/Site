@@ -1,6 +1,5 @@
-/* Enhanced styling for embed pages like eonhub.html */
-
 .sizing {
+    margin-top: 20px;
     position: fixed;
     top: 100px;
     left: 50%;
