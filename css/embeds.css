@@ -1,11 +1,8 @@
 .sizing {
-    margin-top: 20px;
-    position: fixed;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 20px auto;
+    position: relative;
     width: 90%;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 200px);
     background-color: #000000;
     overflow: hidden;
     border-radius: 12px;
@@ -21,28 +18,29 @@
     border-radius: 12px;
 }
 
+.sizing {
+    position: relative;
+}
+
 @media (min-width: 1024px) {
     .sizing {
         width: 80%;
         max-width: 1200px;
-        height: calc(100vh - 140px);
-        top: 120px;
+        height: calc(100vh - 220px);
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .sizing {
         width: 85%;
-        height: calc(100vh - 130px);
-        top: 110px;
+        height: calc(100vh - 210px);
     }
 }
 
 @media (max-width: 767px) {
     .sizing {
         width: 95%;
-        height: calc(100vh - 100px);
-        top: 80px;
+        height: calc(100vh - 180px);
         border-radius: 8px;
     }
     
@@ -54,8 +52,7 @@
 @media (max-width: 480px) {
     .sizing {
         width: 98%;
-        height: calc(100vh - 90px);
-        top: 70px;
+        height: calc(100vh - 160px);
         border-radius: 6px;
     }
     
@@ -66,8 +63,7 @@
 
 @media (max-width: 767px) and (orientation: landscape) {
     .sizing {
-        height: calc(100vh - 80px);
-        top: 60px;
+        height: calc(100vh - 160px);
     }
 }
 
@@ -141,14 +137,14 @@
 }
 
 .project-navigation {
-    position: fixed;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
     z-index: 100;
     width: 90%;
     max-width: 300px;
-    margin: 1rem 0;
+    margin: 1rem auto;
 }
 
 .project-nav-container {
@@ -283,38 +279,5 @@
     
     .project-slide h3 {
         font-size: 0.85rem;
-    }
-}
-
-.sizing {
-    top: 150px;
-    height: calc(100vh - 170px);
-}
-
-@media (min-width: 1024px) {
-    .sizing {
-        top: 160px;
-        height: calc(100vh - 180px);
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .sizing {
-        top: 155px;
-        height: calc(100vh - 175px);
-    }
-}
-
-@media (max-width: 767px) {
-    .sizing {
-        top: 130px;
-        height: calc(100vh - 150px);
-    }
-}
-
-@media (max-width: 480px) {
-    .sizing {
-        top: 120px;
-        height: calc(100vh - 140px);
     }
 }
