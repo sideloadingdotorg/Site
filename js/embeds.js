@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     const totalProjects = projectSlides.length;
 
+    const projectSlider = document.querySelector('.project-slider');
+    const slideWidth = 100 / totalProjects;
+    
+    projectSlider.style.width = `${totalProjects * 100}%`;
+    projectSlides.forEach(slide => {
+        slide.style.flex = `0 0 ${slideWidth}%`;
+    });
+
     backButton.addEventListener('click', function() {
         window.close();
     });
