@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:site_name" content="SideLoading.org">
     <meta name="theme-color" content="#a68c41">
-    <meta property="og:title" content="EonHub">
-    <meta property="og:description" content="Visit an external site from sideloading.org" />
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="Visit the unofficial sideloading site for all of your IOS needs..." />
     <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/logo.png"> <!-- this is just retarded -->
     <meta property="og:image:width" content="1100">
     <meta property="og:image:height" content="1200">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:alt" content="Logo">
-    <title>External site</title>
+    <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/embeds.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/embeds.css">
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div class="header-left">
-                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
+                <button class="back-button" id="backButton" aria-label="Go back">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back
                 </button>
             </div>
             <div class="header-right">
@@ -37,28 +38,39 @@
             </div>
         </header>
 
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <h2 class="sidebar-title">Navigation</h2>
-                <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation"><svg viewBox="0 0 24 24"><path d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"/></svg></button>
-            </div>
-            <div class="sidebar-content">
-                <nav>
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-nav-item"><a href="index.html" class="sidebar-nav-link">Home</a></li>
-                        <li class="sidebar-nav-item"><a href="signer.html" class="sidebar-nav-link">Signer</a></li>
-                        <li class="sidebar-nav-item"><a href="othersources.html" class="sidebar-nav-link active">Other Sources</a></li>
-                        <li class="sidebar-nav-item"><a href="downloads.html" class="sidebar-nav-link">Downloads</a></li>
-                    </ul>
-                </nav>
+        <div class="project-navigation">
+            <div class="project-nav-container">
+                <button class="nav-arrow nav-arrow-left" id="prevProject" aria-label="Previous project">
+                    <svg viewBox="0 0 24 24" width="16" height="16">
+                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                
+                <div class="project-display">
+                    <div class="project-slider">
+                        <div class="project-slide active" data-project="eonhub" data-url="https://eonhubapp.com">
+                            <h3>EonHub</h3>
+                        </div>
+                        <div class="project-slide" data-project="altstore" data-url="#">
+                            <h3>RiceHub</h3>
+                        </div>
+                        <!-- yeah i really dont know what else to add -->
+                    </div>
+                </div>
+                
+                <button class="nav-arrow nav-arrow-right" id="nextProject" aria-label="Next project">
+                    <svg viewBox="0 0 24 24" width="16" height="16">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </div>
         </div>
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
     
 <main class="main-content">
     <div class="sizing">
-        <embed src="https://eonhubapp.com" width="100%" height="100%"></embed>
+        <embed id="projectEmbed" src="https://eonhubapp.com" width="100%" height="100%"></embed>
     </div>
 </main>
 
-<script src="js/general.js"></script>
+<script src="/js/general.js"></script>
+<script src="/js/eonhub.js"></script>
