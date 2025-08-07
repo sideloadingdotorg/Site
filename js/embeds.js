@@ -27,8 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const slideWidth = 100 / totalProjects;
         const translateX = -(index * slideWidth);
         projectSlider.style.transform = `translateX(${translateX}%)`;
-        
 
+        projectSlides.forEach(slide => slide.classList.remove('active'));
+        projectSlides[index].classList.add('active');
         
         const activeSlide = projectSlides[index];
         const projectUrl = activeSlide.getAttribute('data-url');
@@ -66,8 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
-
     document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowLeft' && currentIndex > 0) {
             goToProject(currentIndex - 1);
@@ -77,12 +76,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     prevButton.disabled = true;
-
-    projectEmbed.addEventListener('load', function() {
-        console.log('Project loaded successfully');
-    });
-
-    projectEmbed.addEventListener('error', function() {
-        console.error('Failed to load project');
-    });
+    goToProject(0);
 }); 
