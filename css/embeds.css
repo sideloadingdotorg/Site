@@ -136,6 +136,46 @@
     stroke: currentColor;
 }
 
+.header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.fullscreen-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.fullscreen-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.fullscreen-button:active {
+    transform: translateY(0);
+}
+
+.fullscreen-button svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+
 .project-navigation {
     position: relative;
     top: auto;
