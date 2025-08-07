@@ -6,7 +6,7 @@
     --text-primary: #f0f0f0;
     --text-secondary: #a0a0a0;
     --border-color: #2a2a2a;
-    --shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    --shadow: 0 4px 10px rgba(26, 11, 42, 0.2);
     --sidebar-width: 300px;
     --blur-amount: 8px;
 }
@@ -281,6 +281,28 @@ body {
 
 @media (min-width: 1200px) {
     .container {
-        padding: 0 3rem;
+        max-width: 1600px;
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 0;
+        margin-top: 2rem;
+        font-size: 0.85rem;
     }
 }
