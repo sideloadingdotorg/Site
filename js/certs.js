@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     loadCertificates();
+    setupSearch();
 });
+
+let allCertificates = [];
 
 async function loadCertificates() {
     const certsGrid = document.getElementById('certsGrid');
@@ -12,14 +15,9 @@ async function loadCertificates() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
-        const certificates = await response.json();
+        allCertificates = await response.json();
         
-        certsGrid.innerHTML = '';
-        
-        certificates.forEach(cert => {
-            const certContainer = createCertContainer(cert);
-            certsGrid.appendChild(certContainer);
-        });
+        displayCertificates(allCertificates);
         
     } catch (error) {
         console.error('Error loading certificates:', error);
@@ -27,36 +25,58 @@ async function loadCertificates() {
     }
 }
 
+function displayCertificates(certificates) {
+    const certsGrid = document.getElementById('certsGrid');
+    
+    certsGrid.innerHTML = '';
+    
+    if (certificates.length === 0) {
+        certsGrid.innerHTML = `
+            <div class="no-results">
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <h3>No certificates found</h3>
+                <p>Try adjusting your search terms</p>
+            </div>
+        `;
+        return;
+    }
+    
+    certificates.forEach(cert => {
+        const certContainer = createCertContainer(cert);
+        certsGrid.appendChild(certContainer);
+    });
+}
+
 function createCertContainer(cert) {
     const container = document.createElement('div');
     container.className = 'cert-container';
     
-    const iconHTML = cert.icon ? 
-        `<img src="${cert.icon}" alt="${cert.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">` :
-        '';
-    
-    const fallbackIcon = `
+    const zipIcon = `
         <svg viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+            <polyline points="14,2 14,8 20,8"/>
+            <path d="M10 12H8v2h2v-2z"/>
+            <path d="M12 12h2v2h-2v-2z"/>
+            <path d="M14 12h2v2h-2v-2z"/>
+            <path d="M8 16h2v2H8v-2z"/>
+            <path d="M10 16h2v2h-2v-2z"/>
+            <path d="M12 16h2v2h-2v-2z"/>
+            <path d="M14 16h2v2h-2v-2z"/>
         </svg>
     `;
     
     container.innerHTML = `
         <div class="cert-header">
             <div class="cert-icon">
-                ${iconHTML}
-                <div style="display: ${cert.icon ? 'none' : 'flex'}; align-items: center; justify-content: center;">
-                    ${fallbackIcon}
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    ${zipIcon}
                 </div>
             </div>
             <div class="cert-info">
-                <h3 class="cert-name">${cert.name}</h3>
-                <p class="cert-description">${cert.description}</p>
+                <h3 class="cert-name">${cert.name.replace(/\.zip$/i, '')}</h3>
             </div>
-        </div>
-        <div class="cert-details">
-            <span class="cert-type">${cert.type}</span>
-            <span class="cert-validity">${cert.validity}</span>
         </div>
         <button class="cert-download-btn" onclick="downloadCertificate('${cert.name}', '${cert.download_url}')">
             <svg viewBox="0 0 24 24">
@@ -75,6 +95,51 @@ function createCertContainer(cert) {
     });
     
     return container;
+}
+
+function setupSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    const searchResultsInfo = document.getElementById('searchResultsInfo');
+    const resultsCount = document.getElementById('resultsCount');
+    
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query === '') {
+            displayCertificates(allCertificates);
+            clearSearchBtn.style.display = 'none';
+            searchResultsInfo.style.display = 'none';
+            return;
+        }
+        
+        const filteredCertificates = allCertificates.filter(cert => 
+            cert.name.toLowerCase().includes(query)
+        );
+        
+        displayCertificates(filteredCertificates);
+        
+        clearSearchBtn.style.display = 'block';
+        searchResultsInfo.style.display = 'block';
+        resultsCount.textContent = filteredCertificates.length;
+    });
+    
+    clearSearchBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        displayCertificates(allCertificates);
+        this.style.display = 'none';
+        searchResultsInfo.style.display = 'none';
+        searchInput.focus();
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            this.value = '';
+            displayCertificates(allCertificates);
+            clearSearchBtn.style.display = 'none';
+            searchResultsInfo.style.display = 'none';
+        }
+    });
 }
 
 function downloadCertificate(certName, downloadUrl) {
