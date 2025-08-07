@@ -47,6 +47,7 @@
                     <ul class="sidebar-nav">
                         <li class="sidebar-nav-item"><a href="index.html" class="sidebar-nav-link">Home</a></li>
                         <li class="sidebar-nav-item"><a href="signer.html" class="sidebar-nav-link">Signer</a></li>
+                        <li class="sidebar-nav-item"><a href="othersources.html" class="sidebar-nav-link">Other Sources</a></li>
                         <li class="sidebar-nav-item"><a href="downloads.html" class="sidebar-nav-link active">Downloads</a></li>
                     </ul>
                 </nav>
@@ -57,7 +58,24 @@
         <main class="main-content">
             <div class="container">
                 <h1 class="page-title">Certificates</h1>
-                <p class="page-description">Download certificates for sideloading and app development.</p>
+                <p class="page-description">Download certificates for sideloading.</p>
+                
+                <div class="search-container">
+                    <div class="search-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24">
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search certificates..." aria-label="Search certificates">
+                        <button id="clearSearch" class="clear-search-btn" aria-label="Clear search" style="display: none;">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="search-results-info" id="searchResultsInfo" style="display: none;">
+                        <span id="resultsCount">0</span> certificates found
+                    </div>
+                </div>
             </div>
 
             <div class="certs-grid" id="certsGrid">
