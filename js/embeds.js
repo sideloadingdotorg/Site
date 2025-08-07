@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.getElementById('prevProject');
     const nextButton = document.getElementById('nextProject');
     const projectSlides = document.querySelectorAll('.project-slide');
+    const fullscreenButton = document.getElementById('fullscreenButton');
     
     let currentIndex = 0;
     const totalProjects = projectSlides.length;
@@ -18,6 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     backButton.addEventListener('click', function() {
         window.close();
+    });
+
+    fullscreenButton.addEventListener('click', function() {
+        const currentSlide = projectSlides[currentIndex];
+        const projectUrl = currentSlide.getAttribute('data-url');
+        window.open(projectUrl, '_blank');
     });
 
     function goToProject(index) {
