@@ -8,7 +8,10 @@
 .page-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
-    color: var(--primary-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -76,7 +79,7 @@ input[type="file"] {
 input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px var(--primary-color-translucent, rgba(120, 120, 120, 0.2));
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
 }
 
 input[type="file"] {
@@ -95,7 +98,7 @@ input[type="file"]::file-selector-button {
 }
 
 input[type="file"]::file-selector-button:hover {
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     border-color: var(--primary-color);
 }
@@ -125,7 +128,7 @@ input[type="file"]::file-selector-button:hover {
 .checkbox-group input[type="checkbox"] {
     width: 1.25em;
     height: 1.25em;
-    accent-color: var(--primary-color);
+    accent-color: #8B5CF6;
     cursor: pointer;
 }
 
@@ -142,7 +145,7 @@ input[type="file"]::file-selector-button:hover {
     justify-content: center;
     width: 100%;
     min-height: 58px;
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     padding: 1rem 2.5rem;
     border-radius: 12px;
@@ -157,8 +160,9 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .button-primary:hover {
+    background: var(--primary-gradient-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(120, 120, 120, 0.2);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
 }
 
 .button-primary:disabled {
@@ -172,8 +176,9 @@ input[type="file"]::file-selector-button:hover {
     width: 24px;
     height: 24px;
     border: 3px solid var(--bg-secondary);
-    border-top-color: var(--bg-primary);
+    border-top-color: transparent;
     border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--primary-gradient));
     animation: spin 1s linear infinite;
 }
 
@@ -222,7 +227,7 @@ input[type="file"]::file-selector-button:hover {
 .extras-toggle:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px var(--primary-color-translucent, rgba(120, 120, 120, 0.2));
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
 }
 
 .chevron-icon {

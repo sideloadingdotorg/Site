@@ -9,7 +9,10 @@
 .title {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 700;
-    color: var(--primary-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 2rem;
     line-height: 1.1;
 }
@@ -25,7 +28,7 @@
 
 .cta-button {
     display: inline-block;
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     padding: 1rem 2.5rem;
     border-radius: 12px;
@@ -39,8 +42,9 @@
 }
 
 .cta-button:hover {
+    background: var(--primary-gradient-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(120, 120, 120, 0.2);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
 }
 
 .introduction {
@@ -67,7 +71,10 @@
 .intro-title {
     font-size: 2.5rem;
     font-weight: 600;
-    color: var(--primary-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1.5rem;
 }
 
@@ -90,7 +97,10 @@
 .carousel-title {
     font-size: 2.5rem;
     font-weight: 600;
-    color: var(--primary-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 3rem;
     text-align: center;
 }
@@ -132,7 +142,7 @@
 .carousel-scrollbar-thumb {
     position: absolute;
     height: 8px;
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     border-radius: 4px;
     top: 2px;
     cursor: pointer;
@@ -141,12 +151,12 @@
 }
 
 .carousel-scrollbar-thumb:hover {
-    background-color: var(--primary-hover);
+    background: var(--primary-gradient-hover);
     transform: scaleY(1.2);
 }
 
 .carousel-scrollbar-thumb:active {
-    background-color: var(--primary-hover);
+    background: var(--primary-gradient-hover);
 }
 
 .carousel-track {
@@ -188,7 +198,7 @@
 .guide-icon {
     width: 64px;
     height: 64px;
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -218,7 +228,7 @@
 
 .guide-button {
     display: inline-block;
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -231,8 +241,9 @@
 }
 
 .guide-button:hover {
+    background: var(--primary-gradient-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(120, 120, 120, 0.2);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
 @media (max-width: 768px) {

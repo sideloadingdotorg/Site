@@ -1,7 +1,10 @@
 .page-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -56,7 +59,7 @@
 .download-icon {
     width: 48px;
     height: 48px;
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -218,7 +221,7 @@
 }
 
 .dns-tag {
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -231,7 +234,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.25rem;
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     border: none;
     border-radius: 8px;
@@ -240,12 +243,13 @@
     cursor: pointer;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .dns-download-btn:hover {
-    background: var(--primary-hover);
+    background: var(--primary-gradient-hover);
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
 }
 
 .dns-download-btn svg {
@@ -264,6 +268,34 @@
     
     .dns-container {
         grid-column: 1 / -1;
+    }
+    
+    .dns-container .dns-downloads {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .dns-container .dns-item {
+        max-width: 600px;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dns-container .dns-info {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .dns-container .dns-item .dns-info .dns-tags {
+        justify-content: center !important;
+        display: flex !important;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        width: 100%;
     }
     
     .page-title {

@@ -1,7 +1,10 @@
 .page-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -35,7 +38,7 @@
 
 .search-wrapper:focus-within {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(166, 140, 65, 0.1);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 .search-icon {
@@ -72,6 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .clear-search-btn:hover {
@@ -94,7 +98,10 @@
 
 .search-results-info span {
     font-weight: 600;
-    color: var(--primary-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .certs-grid {
@@ -130,7 +137,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+    background: var(--primary-gradient);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -149,7 +156,7 @@
 .cert-icon {
     width: 60px;
     height: 60px;
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -215,7 +222,7 @@
 }
 
 .cert-type {
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -242,7 +249,7 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 1rem;
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     border: none;
     border-radius: 12px;
@@ -254,9 +261,9 @@
 }
 
 .cert-download-btn:hover {
-    background: var(--primary-hover);
+    background: var(--primary-gradient-hover);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
 .cert-download-btn svg {
@@ -280,8 +287,9 @@
     width: 40px;
     height: 40px;
     border: 3px solid var(--border-color);
-    border-top: 3px solid var(--primary-color);
+    border-top: 3px solid transparent;
     border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--primary-gradient));
     animation: spin 1s linear infinite;
     margin-bottom: 1rem;
 }
@@ -324,7 +332,7 @@
 }
 
 .retry-btn {
-    background: var(--primary-color);
+    background: var(--primary-gradient);
     color: var(--bg-primary);
     border: none;
     padding: 0.75rem 1.5rem;
@@ -332,10 +340,11 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .retry-btn:hover {
-    background: var(--primary-hover);
+    background: var(--primary-gradient-hover);
 }
 
 .no-results {
