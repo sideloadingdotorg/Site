@@ -57,7 +57,7 @@
         <main class="main-content">
             <h1 class="page-title">Online IPA Signer</h1>
             <p class="page-description">Upload your IPA, certificate, and provisioning profile to sign your apps directly in the browser.</p>
-            <form id="signForm" method="POST" action="/sign" enctype="multipart/form-data" novalidate autocomplete="off">
+            <form id="signForm" method="POST" action="https://csl.ipasign.pro/sign" enctype="multipart/form-data" novalidate autocomplete="off">
                 <div class="form-section">
                     <h2 class="section-title">1. Core Files</h2>
                     <div class="form-grid">
@@ -150,7 +150,7 @@
             resultsDiv.innerHTML = '';
             const formData = new FormData(this);
             try {
-                const response = await fetch('/sign', { method: 'POST', body: formData });
+                const response = await fetch('https://csl.ipasign.pro/sign', { method: 'POST', body: formData });
                 const data = await response.json();
                 if (response.ok && data.success) {
                     if (data.results && data.results.length > 0) {
