@@ -269,7 +269,7 @@ function createAppItem(app) {
     item.innerHTML = `
         <div class="ipa-header">
             <div class="ipa-icon">
-                ${appIcon ? `<img src="${appIcon}" alt="${appName}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">` : ''}
+                ${appIcon ? `<img src="${appIcon}" alt="${appName}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">` : ''}
                 <div style="display: ${appIcon ? 'none' : 'block'};">
                     ${fallbackIcon}
                 </div>
