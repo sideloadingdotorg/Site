@@ -47,6 +47,11 @@ body {
     padding: 0 2rem;
 }
 
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
 .header {
     display: flex;
     justify-content: space-between;

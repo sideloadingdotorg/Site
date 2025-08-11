@@ -306,49 +306,8 @@ function createAppItem(app) {
 }
 
 function downloadIPA(appName, appUrl) {
-    const button = event.target.closest('.ipa-download-btn');
-    
-    if (!button || button.disabled) return;
-    
-    button.classList.add('loading');
-    button.disabled = true;
-    button.innerHTML = `
-        <svg viewBox="0 0 24 24">
-            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-            <polyline points="7,10 12,15 17,10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Downloading...
-    `;
-    
-    setTimeout(() => {
-        try {
-            const link = document.createElement('a');
-            link.href = appUrl;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            showNotification(`${appName} download initiated!`, 'success');
-            
-        } catch (error) {
-            console.error('Download error:', error);
-            showNotification(`Failed to download ${appName}`, 'error');
-        }
-        
-        button.classList.remove('loading');
-        button.disabled = false;
-        button.innerHTML = `
-            <svg viewBox="0 0 24 24">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-                <polyline points="7,10 12,15 17,10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Download IPA
-        `;
-    }, 1500);
+    const waitingUrl = `waiting.html?url=${encodeURIComponent(appUrl)}&name=${encodeURIComponent(appName)}&source=Repository`;
+    window.open(waitingUrl, '_blank');
 }
 
 function showErrorState(container, errorMessage) {

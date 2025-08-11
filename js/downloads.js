@@ -6,6 +6,11 @@ function initializeDownloads() {
     console.log('Downloads page initialized');
 }
 
+function downloadNomadDNS() {
+    const waitingUrl = `waiting.html?url=${encodeURIComponent('https://github.com/sideloadingdotorg/Site/releases/download/DNS/Nomad.mobileconfig')}&name=${encodeURIComponent('Nomad DNS')}&source=Nomad DNS`;
+    window.open(waitingUrl, '_blank');
+}
+
 function downloadDNS(type) {
     const button = event.target.closest('.dns-download-btn');
     

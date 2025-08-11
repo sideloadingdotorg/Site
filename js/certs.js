@@ -143,49 +143,8 @@ function setupSearch() {
 }
 
 function downloadCertificate(certName, downloadUrl) {
-    const button = event.target.closest('.cert-download-btn');
-    
-    if (!button) return;
-    
-    button.classList.add('loading');
-    button.disabled = true;
-    button.innerHTML = `
-        <svg viewBox="0 0 24 24">
-            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-            <polyline points="7,10 12,15 17,10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Downloading...
-    `;
-    
-    setTimeout(() => {
-        try {
-            const link = document.createElement('a');
-            link.href = downloadUrl;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            showNotification(`${certName} download initiated!`, 'success');
-            
-        } catch (error) {
-            console.error('Download error:', error);
-            showNotification(`Failed to download ${certName}`, 'error');
-        }
-        
-        button.classList.remove('loading');
-        button.disabled = false;
-        button.innerHTML = `
-            <svg viewBox="0 0 24 24">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-                <polyline points="7,10 12,15 17,10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Download Certificate
-        `;
-    }, 1500);
+    const waitingUrl = `waiting.html?url=${encodeURIComponent(downloadUrl)}&name=${encodeURIComponent(certName)}&source=Certificates`;
+    window.open(waitingUrl, '_blank');
 }
 
 function showErrorState(container, errorMessage) {
