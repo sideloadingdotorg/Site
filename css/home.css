@@ -38,28 +38,6 @@
     transform: translateY(-2px);
 }
 
-.introduction {
-    margin-top: 4rem;
-}
-
-.intro-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.intro-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-.intro-text {
-    font-size: 1rem;
-    color: var(--text-secondary);
-}
-
 .why-choose-us-section {
     margin-top: 6rem;
 }
@@ -391,16 +369,17 @@
     animation-delay: 0.8s;
 }
 
-.intro-title, .intro-text {
+.why-choose-title,
+.why-choose-grid {
     animation: fade-in-up 0.6s ease-out forwards;
     opacity: 0;
 }
 
-.intro-title {
+.why-choose-title {
     animation-delay: 0.2s;
 }
 
-.intro-text {
+.why-choose-grid {
     animation-delay: 0.4s;
 }
 
@@ -421,11 +400,14 @@
         margin-top: 4rem;
     }
 
-    .why-choose-title, .carousel-title, .reviews-title {
+    .why-choose-title,
+    .carousel-title,
+    .reviews-title {
         font-size: 1.5rem;
     }
 
-    .carousel-container, .reviews-carousel-container {
+    .carousel-container,
+    .reviews-carousel-container {
         padding-left: 10px;
         padding-right: 10px;
         margin-left: -10px;
