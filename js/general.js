@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     const sunIcon = themeToggle.querySelector('.sun-icon');
     const moonIcon = themeToggle.querySelector('.moon-icon');
-
     const currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateIcon(currentTheme);
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     themeToggle.addEventListener('click', () => {
         const theme = document.documentElement.getAttribute('data-theme');
         const newTheme = theme === 'dark' ? 'light' : 'dark';
-        
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateIcon(newTheme);
@@ -34,14 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContent = document.querySelector('.main-content');
     const body = document.body;
 
-    hamburgerMenu.addEventListener('click', () => {
+    function openSidebar() {
         sidebar.classList.add('active');
         sidebarOverlay.classList.add('active');
         hamburgerMenu.classList.add('active');
         header.classList.add('blurred');
         mainContent.classList.add('blurred');
         body.style.overflow = 'hidden';
-    });
+    }
 
     function closeSidebar() {
         sidebar.classList.remove('active');
@@ -52,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         body.style.overflow = '';
     }
 
+    hamburgerMenu.addEventListener('click', openSidebar);
     sidebarOverlay.addEventListener('click', closeSidebar);
     sidebarClose.addEventListener('click', closeSidebar);
 
