@@ -84,4 +84,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     prevButton.disabled = true;
     goToProject(0);
-}); 
+});
