@@ -11,6 +11,7 @@
     --shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
     --sidebar-width: 300px;
     --blur-amount: 8px;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="light"] {
@@ -24,6 +25,7 @@
     --text-secondary: #555555;
     --border-color: #e0e0e0;
     --shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.1), 0 2px 4px -1px rgba(124, 58, 237, 0.06);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 * {
