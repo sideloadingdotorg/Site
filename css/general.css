@@ -297,16 +297,31 @@ body {
 .themed-separator {
     width: 100%;
     max-width: 800px;
-    height: 4px;
+    height: 6px;
     background: var(--primary-gradient);
     margin: 4rem auto;
-    border-radius: 2px;
-    box-shadow: 0 0 15px 5px rgba(139, 92, 246, 0.5);
-    transition: all 0.3s ease;
+    border-radius: 3px;
+    box-shadow: 0 0 20px 8px rgba(139, 92, 246, 0.7);
+    animation: pulse-glow 2s infinite ease-in-out;
 }
 
 [data-theme="light"] .themed-separator {
-    box-shadow: 0 0 15px 5px rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 20px 8px rgba(124, 58, 237, 0.7);
+}
+
+@keyframes pulse-glow {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 768px) {
