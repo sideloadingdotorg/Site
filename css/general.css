@@ -294,6 +294,15 @@ body {
     user-select: none;
 }
 
+.themed-separator {
+    width: 100%;
+    max-width: 800px;
+    height: 2px;
+    background: var(--primary-gradient);
+    margin: 4rem auto;
+    border-radius: 1px;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
