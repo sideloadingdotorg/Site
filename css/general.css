@@ -301,6 +301,11 @@ body {
     background: var(--primary-gradient);
     margin: 4rem auto;
     border-radius: 1px;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+[data-theme="light"] .themed-separator {
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
 }
 
 @media (max-width: 768px) {
