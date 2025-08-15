@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#8B5CF6">
     <meta property="og:title" content="Signer">
     <meta property="og:description" content="Visit the BEST website signer now!" />
-    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/logo.png"> <!-- this is just retarded -->
+    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/logo.png">
     <meta property="og:image:width" content="1100">
     <meta property="og:image:height" content="1200">
     <meta property="og:image:type" content="image/png">
@@ -18,6 +18,95 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/signer.css">
+    <style>
+        .wizard-progress {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+        .wizard-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .wizard-step.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .wizard-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .wizard-step.active .wizard-circle {
+            border-color: var(--primary-color);
+            background: var(--primary-gradient);
+            color: var(--bg-primary);
+        }
+        .wizard-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .wizard-buttons .button-primary,
+        .wizard-buttons .button-secondary {
+            width: auto;
+            min-width: 120px;
+        }
+        .wizard-section {
+            display: none;
+        }
+        .wizard-section.active {
+            display: block;
+        }
+        .help-icon {
+            display: inline-block;
+            margin-left: 0.3em;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.1em;
+            vertical-align: middle;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.75em 1em;
+            font-size: 0.95em;
+            z-index: 100;
+            max-width: 320px;
+            box-shadow: var(--shadow);
+        }
+        .help-icon:hover + .tooltip,
+        .help-icon:focus + .tooltip {
+            display: block;
+        }
+        .form-group {
+            position: relative;
+        }
+        .required-badge {
+            color: #e11d48;
+            font-size: 0.95em;
+            margin-left: 0.3em;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -61,53 +150,175 @@
         <main class="main-content">
             <h1 class="page-title">Online IPA Signer</h1>
             <p class="page-description">Upload your IPA, certificate, and provisioning profile to sign your apps directly in the browser.</p>
+            <div class="wizard-progress" id="wizardProgress">
+                <div class="wizard-step active" data-step="0">
+                    <div class="wizard-circle">1</div>
+                    <span>IPA</span>
+                </div>
+                <div class="wizard-step" data-step="1">
+                    <div class="wizard-circle">2</div>
+                    <span>Certificate</span>
+                </div>
+                <div class="wizard-step" data-step="2">
+                    <div class="wizard-circle">3</div>
+                    <span>Extras</span>
+                </div>
+                <div class="wizard-step" data-step="3">
+                    <div class="wizard-circle">4</div>
+                    <span>Review</span>
+                </div>
+            </div>
             <form id="signForm" method="POST" action="https://csl.ipasign.pro/sign" enctype="multipart/form-data" novalidate autocomplete="off">
-                <div class="form-section">
-                    <h2 class="section-title">1. Core Files</h2>
-                    <div class="form-grid">
-                        <div class="form-group span-2"><label for="ipa_files">IPA Files (up to 10)</label><input type="file" id="ipa_files" name="ipa[]" multiple accept=".ipa"></div>
-                        <div class="form-group span-2"><label for="ipa_links">Or Direct IPA Links (comma-separated)</label><input type="text" id="ipa_links" name="ipa_direct_links" placeholder="http://example.com/app1.ipa"></div>
-                        <div class="form-group"><label for="p12_file">P12 Certificate</label><input type="file" id="p12_file" name="p12" accept=".p12" required></div>
-                        <div class="form-group"><label for="p12_pass">P12 Password</label><input type="password" id="p12_pass" name="p12_password"></div>
-                        <div class="form-group span-2"><label for="provision_file">Mobile Provision</label><input type="file" id="provision_file" name="mobileprovision" accept=".mobileprovision" required></div>
+                <div class="wizard-section active" data-step="0">
+                    <div class="form-section">
+                        <h2 class="section-title">1. IPA Files <span class="required-badge">*</span></h2>
+                        <div class="form-grid">
+                            <div class="form-group span-2">
+                                <label for="ipa">IPA Files (up to 10)
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Upload one or more .ipa files to be signed. You can select up to 10 files at once.</span>
+                                    </span>
+                                </label>
+                                <input type="file" id="ipa" name="ipa" multiple accept=".ipa" required>
+                            </div>
+                            <div class="form-group span-2">
+                                <label for="ipa_links">Or Direct IPA Links
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Paste direct download links to .ipa files, separated by commas. Example: http://example.com/app1.ipa, http://example.com/app2.ipa</span>
+                                    </span>
+                                </label>
+                                <input type="text" id="ipa_links" name="ipa_direct_links" placeholder="http://example.com/app1.ipa">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="extras-section">
-                    <button type="button" class="extras-toggle" id="extrasToggle">
-                        <span>Extras</span>
-                        <svg class="chevron-icon" viewBox="0 0 24 24">
-                            <path d="M6 9l6 6 6-6"/>
-                        </svg>
+                <div class="wizard-section" data-step="1">
+                    <div class="form-section">
+                        <h2 class="section-title">2. Certificate & Provision <span class="required-badge">*</span></h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="p12">P12 Certificate
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Upload your .p12 signing certificate. This is required to sign the IPA.</span>
+                                    </span>
+                                    <span class="required-badge">*</span>
+                                </label>
+                                <input type="file" id="p12" name="p12" accept=".p12" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="p12_password">P12 Password
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">If your .p12 file is password protected, enter the password here. Otherwise, leave blank.</span>
+                                    </span>
+                                </label>
+                                <input type="password" id="p12_password" name="p12_password">
+                            </div>
+                            <div class="form-group span-2">
+                                <label for="mobileprovision">Mobile Provision
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Upload your .mobileprovision file. This is required for signing.</span>
+                                    </span>
+                                    <span class="required-badge">*</span>
+                                </label>
+                                <input type="file" id="mobileprovision" name="mobileprovision" accept=".mobileprovision" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wizard-section" data-step="2">
+                    <div class="form-section">
+                        <h2 class="section-title">3. In-App Modifications (Optional)</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="cyan_name">Custom App Name
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Change the display name of the app after signing.</span>
+                                    </span>
+                                </label>
+                                <input type="text" id="cyan_name" name="cyan_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="cyan_version">Custom Version
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Set a custom version number for the app. Example: 1.2.3</span>
+                                    </span>
+                                </label>
+                                <input type="text" id="cyan_version" name="cyan_version" placeholder="e.g., 1.2.3">
+                            </div>
+                            <div class="form-group">
+                                <label for="cyan_bundle_id">Custom Bundle ID
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Override the app's bundle identifier. Example: com.company.appname</span>
+                                    </span>
+                                </label>
+                                <input type="text" id="cyan_bundle_id" name="cyan_bundle_id" placeholder="e.g., com.company.appname">
+                            </div>
+                            <div class="form-group">
+                                <label for="cyan_minimum">Minimum iOS Version
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Set the minimum iOS version required to install the app. Example: 14.0</span>
+                                    </span>
+                                </label>
+                                <input type="text" id="cyan_minimum" name="cyan_minimum" placeholder="e.g., 14.0">
+                            </div>
+                            <div class="form-group span-2">
+                                <label for="tweaks">Optional Tweaks (.deb, .dylib)
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Upload .deb or .dylib files to inject tweaks into the app.</span>
+                                    </span>
+                                </label>
+                                <input type="file" id="tweaks" name="cyan_tweaks" multiple accept=".deb,.dylib">
+                            </div>
+                            <div class="form-group span-2">
+                                <label for="icon">Optional Icon (.png, .jpg)
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Upload a custom icon for the app (.png, .jpg, .jpeg).</span>
+                                    </span>
+                                </label>
+                                <input type="file" id="icon" name="cyan_icon" accept=".png,.jpg,.jpeg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h2 class="section-title">Advanced Options (Optional)</h2>
+                        <div class="form-grid">
+                            <div class="form-group span-2">
+                                <label for="remove_dylibs">Remove Dylibs (JSON array)
+                                    <span class="help-icon" tabindex="0">?
+                                        <span class="tooltip">Provide a JSON array of dylib names to remove, e.g. ["libToRemove.dylib","Another.dylib"]</span>
+                                    </span>
+                                </label>
+                                <input type="text" id="remove_dylibs" name="remove_dylibs" placeholder='["libToRemove.dylib","Another.dylib"]'>
+                            </div>
+                        </div>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-group"><input type="checkbox" id="remove_supported" name="cyan_remove_supported" value="1"><label for="remove_supported">Remove Supported Devices</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="no_watch" name="cyan_no_watch" value="1"><label for="no_watch">No Watch App</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="enable_docs" name="cyan_enable_documents" value="1"><label for="enable_docs">Enable Documents</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="fakesign" name="cyan_fakesign" value="1"><label for="fakesign">Fake Sign</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="thin_binary" name="cyan_thin" value="1"><label for="thin_binary">Thin Binary</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="remove_ext" name="cyan_remove_extensions" value="1"><label for="remove_ext">Remove Extensions</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="ignore_enc" name="cyan_ignore_encrypted" value="1"><label for="ignore_enc">Ignore Encrypted</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="inject_dylibs" name="inject_dylibs" value="1"><label for="inject_dylibs">Inject Dylibs</label></div>
+                            <div class="checkbox-group"><input type="checkbox" id="remove_embedded" name="remove_embedded" value="1"><label for="remove_embedded">Remove Embedded Profile</label></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wizard-section" data-step="3">
+                    <div class="form-section">
+                        <h2 class="section-title">4. Review & Submit</h2>
+                        <div id="reviewSummary" style="margin-bottom:2rem;"></div>
+                        <p>Please review your selections above. If everything looks correct, click "Sign IPAs" to begin signing.</p>
+                    </div>
+                </div>
+                <div class="wizard-buttons">
+                    <button type="button" class="button-secondary" id="wizardBack" style="display:none;">Back</button>
+                    <button type="button" class="button-primary" id="wizardNext">Next</button>
+                    <button type="submit" class="button-primary" id="submitButton" style="display:none;">
+                        <span class="button-text">Sign IPAs</span>
+                        <div class="spinner" hidden></div>
                     </button>
-                    <div class="extras-content" id="extrasContent">
-                        <div class="form-section">
-                            <h2 class="section-title">In-App Modifications</h2>
-                            <div class="form-grid">
-                                <div class="form-group"><label for="app_name">Custom App Name</label><input type="text" id="app_name" name="cyan_name"></div>
-                                <div class="form-group"><label for="app_version">Custom Version</label><input type="text" id="app_version" name="cyan_version" placeholder="e.g., 1.2.3"></div>
-                                <div class="form-group"><label for="bundle_id">Custom Bundle ID</label><input type="text" id="bundle_id" name="cyan_bundle_id" placeholder="e.g., com.company.appname"></div>
-                                <div class="form-group"><label for="min_ios">Minimum iOS Version</label><input type="text" id="min_ios" name="cyan_minimum" placeholder="e.g., 14.0"></div>
-                                <div class="form-group span-2"><label for="tweaks">Optional Tweaks (.deb, .dylib)</label><input type="file" id="tweaks" name="cyan_tweaks" multiple accept=".deb,.dylib"></div>
-                                <div class="form-group span-2"><label for="icon">Optional Icon (.png, .jpg)</label><input type="file" id="icon" name="cyan_icon" accept=".png,.jpg,.jpeg"></div>
-                            </div>
-                        </div>
-                        <div class="form-section">
-                            <h2 class="section-title">Advanced Options</h2>
-                            <div class="checkbox-grid">
-                                <div class="checkbox-group"><input type="checkbox" id="remove_supported" name="cyan_remove_supported" value="1"><label for="remove_supported">Remove Supported Devices</label></div>
-                                <div class="checkbox-group"><input type="checkbox" id="no_watch" name="cyan_no_watch" value="1"><label for="no_watch">No Watch App</label></div>
-                                <div class="checkbox-group"><input type="checkbox" id="enable_docs" name="cyan_enable_documents" value="1"><label for="enable_docs">Enable Documents</label></div>
-                                <div class="checkbox-group"><input type="checkbox" id="fakesign" name="cyan_fakesign" value="1"><label for="fakesign">Fake Sign</label></div>
-                                <div class="checkbox-group"><input type="checkbox" id="thin_binary" name="cyan_thin" value="1"><label for="thin_binary">Thin Binary</label></div>
-                                <div class="checkbox-group"><input type="checkbox" id="remove_ext" name="cyan_remove_extensions" value="1"><label for="remove_ext">Remove Extensions</label></div>
-                                <div class="checkbox-group"><input type="checkbox" id="ignore_enc" name="cyan_ignore_encrypted" value="1"><label for="ignore_enc">Ignore Encrypted</label></div>
-                                <div class="checkbox-group"><input type="checkbox" id="inject_dylibs" name="inject_dylibs" value="1"><label for="inject_dylibs">Inject Dylibs</label></div>
-                                <div class="checkbox-group"><input type="checkbox" id="remove_embedded" name="remove_embedded" value="1"><label for="remove_embedded">Remove Embedded Profile</label></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <button type="submit" class="button-primary" id="submitButton"><span class="button-text">Sign IPAs</span><div class="spinner" hidden></div></button>
             </form>
             <div id="results"></div>
         </main>
@@ -116,10 +327,131 @@
     <script src="js/general.js"></script>
     <script>
         const signForm = document.getElementById('signForm');
+        const wizardSections = Array.from(document.querySelectorAll('.wizard-section'));
+        const wizardSteps = Array.from(document.querySelectorAll('.wizard-step'));
+        const wizardProgress = document.getElementById('wizardProgress');
+        const wizardBack = document.getElementById('wizardBack');
+        const wizardNext = document.getElementById('wizardNext');
         const submitButton = document.getElementById('submitButton');
-        const buttonText = submitButton.querySelector('.button-text');
-        const buttonSpinner = submitButton.querySelector('.spinner');
+        const reviewSummary = document.getElementById('reviewSummary');
         const resultsDiv = document.getElementById('results');
+        let currentStep = 0;
+
+        function showStep(step) {
+            wizardSections.forEach((section, idx) => {
+                section.classList.toggle('active', idx === step);
+            });
+            wizardSteps.forEach((stepEl, idx) => {
+                stepEl.classList.toggle('active', idx === step);
+            });
+            wizardBack.style.display = step === 0 ? 'none' : '';
+            wizardNext.style.display = step < wizardSections.length - 1 ? '' : 'none';
+            submitButton.style.display = step === wizardSections.length - 1 ? '' : 'none';
+            if (step === wizardSections.length - 1) {
+                updateReviewSummary();
+            }
+        }
+
+        function validateStep(step) {
+            if (step === 0) {
+                const ipaFiles = document.getElementById('ipa');
+                const ipaLinks = document.getElementById('ipa_links');
+                if ((!ipaFiles.files || ipaFiles.files.length === 0) && !ipaLinks.value.trim()) {
+                    showNotification('Please upload at least one IPA file or provide a direct IPA link.');
+                    return false;
+                }
+            }
+            if (step === 1) {
+                const p12 = document.getElementById('p12');
+                const provision = document.getElementById('mobileprovision');
+                if (!p12.files || p12.files.length === 0) {
+                    showNotification('Please upload your P12 certificate.');
+                    return false;
+                }
+                if (!provision.files || provision.files.length === 0) {
+                    showNotification('Please upload your mobile provision file.');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function updateReviewSummary() {
+            let html = '<ul style="list-style:disc;padding-left:1.5em;">';
+            // IPA
+            const ipaFiles = document.getElementById('ipa');
+            const ipaLinks = document.getElementById('ipa_links');
+            if (ipaFiles.files && ipaFiles.files.length > 0) {
+                html += `<li><strong>IPA Files:</strong> ${Array.from(ipaFiles.files).map(f => f.name).join(', ')}</li>`;
+            }
+            if (ipaLinks.value.trim()) {
+                html += `<li><strong>Direct IPA Links:</strong> ${ipaLinks.value.trim()}</li>`;
+            }
+            // Cert/Provision
+            const p12 = document.getElementById('p12');
+            const provision = document.getElementById('mobileprovision');
+            if (p12.files && p12.files.length > 0) {
+                html += `<li><strong>P12 Certificate:</strong> ${Array.from(p12.files).map(f => f.name).join(', ')}</li>`;
+            }
+            const p12Pass = document.getElementById('p12_password').value ? 'Yes' : 'No';
+            html += `<li><strong>P12 Password Provided:</strong> ${p12Pass}</li>`;
+            if (provision.files && provision.files.length > 0) {
+                html += `<li><strong>Mobile Provision:</strong> ${Array.from(provision.files).map(f => f.name).join(', ')}</li>`;
+            }
+            // Extras
+            const appName = document.getElementById('cyan_name').value;
+            const appVersion = document.getElementById('cyan_version').value;
+            const bundleId = document.getElementById('cyan_bundle_id').value;
+            const minIos = document.getElementById('cyan_minimum').value;
+            if (appName) html += `<li><strong>Custom App Name:</strong> ${appName}</li>`;
+            if (appVersion) html += `<li><strong>Custom Version:</strong> ${appVersion}</li>`;
+            if (bundleId) html += `<li><strong>Custom Bundle ID:</strong> ${bundleId}</li>`;
+            if (minIos) html += `<li><strong>Minimum iOS Version:</strong> ${minIos}</li>`;
+            // Tweaks/Icon
+            const tweaks = document.getElementById('tweaks');
+            if (tweaks.files && tweaks.files.length > 0) {
+                html += `<li><strong>Tweaks:</strong> ${Array.from(tweaks.files).map(f => f.name).join(', ')}</li>`;
+            }
+            const icon = document.getElementById('icon');
+            if (icon.files && icon.files.length > 0) {
+                html += `<li><strong>Custom Icon:</strong> ${Array.from(icon.files).map(f => f.name).join(', ')}</li>`;
+            }
+            // Advanced
+            const advOptions = [
+                {id: 'remove_supported', label: 'Remove Supported Devices'},
+                {id: 'no_watch', label: 'No Watch App'},
+                {id: 'enable_docs', label: 'Enable Documents'},
+                {id: 'fakesign', label: 'Fake Sign'},
+                {id: 'thin_binary', label: 'Thin Binary'},
+                {id: 'remove_ext', label: 'Remove Extensions'},
+                {id: 'ignore_enc', label: 'Ignore Encrypted'},
+                {id: 'inject_dylibs', label: 'Inject Dylibs'},
+                {id: 'remove_embedded', label: 'Remove Embedded Profile'}
+            ];
+            const enabled = advOptions.filter(opt => document.getElementById(opt.id).checked).map(opt => opt.label);
+            if (enabled.length > 0) {
+                html += `<li><strong>Advanced Options:</strong> ${enabled.join(', ')}</li>`;
+            }
+            html += '</ul>';
+            reviewSummary.innerHTML = html;
+        }
+
+        wizardNext.addEventListener('click', () => {
+            if (!validateStep(currentStep)) return;
+            if (currentStep < wizardSections.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+        wizardBack.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        showStep(currentStep);
+
         function showNotification(message, type = 'error') {
             const container = document.getElementById('notification-container');
             const notification = document.createElement('div');
@@ -142,15 +474,22 @@
                 }
             }, 5000);
         }
+
         window.addEventListener('load', () => {
             signForm.reset();
             resultsDiv.innerHTML = '';
         });
+        submitButton.addEventListener('click', function(event) {
+            submitButton.disabled = true;
+            submitButton.querySelector('.button-text').hidden = true;
+            submitButton.querySelector('.spinner').hidden = false;
+        });
+
         signForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             submitButton.disabled = true;
-            buttonText.hidden = true;
-            buttonSpinner.hidden = false;
+            submitButton.querySelector('.button-text').hidden = true;
+            submitButton.querySelector('.spinner').hidden = false;
             resultsDiv.innerHTML = '';
             const formData = new FormData(this);
             try {
@@ -189,31 +528,21 @@
                 showNotification('A network or client-side error occurred: ' + err.message);
             } finally {
                 submitButton.disabled = false;
-                buttonText.hidden = false;
-                buttonSpinner.hidden = true;
+                submitButton.querySelector('.button-text').hidden = false;
+                submitButton.querySelector('.spinner').hidden = true;
             }
         });
-        
-        const extrasToggle = document.getElementById('extrasToggle');
-        const extrasContent = document.getElementById('extrasContent');
-        const chevronIcon = extrasToggle.querySelector('.chevron-icon');
-        
-        extrasToggle.addEventListener('click', function() {
-            const isExpanded = extrasContent.style.display === 'block';
-            
-            if (isExpanded) {
-                extrasContent.style.display = 'none';
-                chevronIcon.style.transform = 'rotate(0deg)';
-                extrasToggle.setAttribute('aria-expanded', 'false');
-            } else {
-                extrasContent.style.display = 'block';
-                chevronIcon.style.transform = 'rotate(180deg)';
-                extrasToggle.setAttribute('aria-expanded', 'true');
-            }
+
+        document.querySelectorAll('.help-icon').forEach(icon => {
+            icon.addEventListener('focus', function() {
+                const tooltip = icon.nextElementSibling;
+                if (tooltip) tooltip.style.display = 'block';
+            });
+            icon.addEventListener('blur', function() {
+                const tooltip = icon.nextElementSibling;
+                if (tooltip) tooltip.style.display = 'none';
+            });
         });
-        
-        extrasContent.style.display = 'none';
-        extrasToggle.setAttribute('aria-expanded', 'false');
     </script>
 </body>
 </html>
