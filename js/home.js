@@ -1,76 +1,109 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('carouselContainer');
-    const track = document.getElementById('carouselTrack');
-    const scrollbarThumb = document.getElementById('scrollbarThumb');
-    const scrollbarTrack = scrollbarThumb.parentElement;
+    const carousel = document.querySelector('.guides-carousel');
+    const track = document.querySelector('.guides-track');
+    const prevButton = document.getElementById('prevGuide');
+    const nextButton = document.getElementById('nextGuide');
     
-    let isDragging = false;
-    let startX = 0;
-    let scrollLeft = 0;
-    
-    function updateScrollbar() {
-        if (!container || !track || !scrollbarTrack) return;
-        const scrollWidth = track.scrollWidth;
-        const clientWidth = container.clientWidth;
-        const containerScrollLeft = container.scrollLeft;
-        
-        const thumbWidth = Math.max(40, (clientWidth / scrollWidth) * scrollbarTrack.clientWidth);
-        scrollbarThumb.style.width = thumbWidth + 'px';
-        
-        const maxScroll = scrollWidth - clientWidth;
-        const thumbPosition = maxScroll > 0 ? (containerScrollLeft / maxScroll) * (scrollbarTrack.clientWidth - thumbWidth) : 0;
-        scrollbarThumb.style.left = thumbPosition + 'px';
+    if (!carousel || !track || !prevButton || !nextButton) return;
+
+    let currentIndex = 0;
+    const items = track.querySelectorAll('.guide-card');
+    const totalItems = items.length;
+    let itemWidth = items[0].offsetWidth + 32; 
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= totalItems - Math.floor(carousel.offsetWidth / itemWidth);
     }
     
-    if (container && track && scrollbarThumb) {
-        container.addEventListener('scroll', updateScrollbar);
-        
-        scrollbarThumb.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX - scrollbarThumb.offsetLeft;
-            scrollLeft = container.scrollLeft;
-            
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', handleMouseUp);
+    const resizeObserver = new ResizeObserver(entries => {
+        for (let entry of entries) {
+            if (entry.target === carousel) {
+                if (items.length > 0) {
+                    itemWidth = items[0].offsetWidth + 32; 
+                    updateCarousel();
+                }
+            }
+        }
+    });
+    resizeObserver.observe(carousel);
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    updateCarousel();
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate__fadeInUp');
+                observer.unobserve(entry.target);
+            }
         });
-        
-        scrollbarTrack.addEventListener('click', (e) => {
-            if (e.target === scrollbarThumb) return;
-            
-            const rect = scrollbarTrack.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            const scrollbarWidth = scrollbarTrack.clientWidth;
-            const thumbWidth = scrollbarThumb.offsetWidth;
-            
-            const scrollRatio = clickX / scrollbarWidth;
-            const maxScroll = track.scrollWidth - container.clientWidth;
-            const newScrollLeft = scrollRatio * maxScroll;
-            
-            container.scrollTo({
-                left: newScrollLeft,
-                behavior: 'smooth'
+    }, observerOptions);
+
+    document.querySelectorAll('.animate__animated').forEach(element => {
+        observer.observe(element);
+    });
+
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        const text = heroTitle.innerHTML;
+        heroTitle.innerHTML = '';
+        let i = 0;
+        const speed = 50;
+
+        function typeWriter() {
+            if (i < text.length) {
+                heroTitle.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    }
+    
+    function fetchReviews() {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                const reviews = [
+                    { id: 1, user: 'spartan', text: 'blank', stars: 5, avatar: '#' },
+                    { id: 2, user: 'spartan', text: "blank", stars: 5, avatar: '#' },
+                    { id: 3, user: 'spartan', text: "blank", stars: 5, avatar: '#' },
+                    { id: 4, user: 'spartan', text: "blank", stars: 5, avatar: '#' },
+                    { id: 5, user: 'spartan', text: "blank", stars: 5, avatar: '#' },
+                    { id: 6, user: 'spartan', text: "blank", stars: 5, avatar: '#' },
+                    { id: 7, user: 'spartan', text: "blank", stars: 5, avatar: '#' },
+                    { id: 8, user: 'spartan', text: "30 came wit a built in switch", stars: 5, avatar: '#' },
+                ];
+                resolve(reviews);
+            }, 1500);
+        });
+    }
+
+    const reviewsGrid = document.querySelector('.reviews-grid');
+    if (reviewsGrid) {
+        fetchReviews().then(reviews => {
+            reviews.forEach(review => {
+
             });
         });
-        
-        function handleMouseMove(e) {
-            if (!isDragging) return;
-            
-            e.preventDefault();
-            const x = e.pageX - startX;
-            const scrollbarWidth = scrollbarTrack.clientWidth - scrollbarThumb.offsetWidth;
-            const scrollRatio = x / scrollbarWidth;
-            const maxScroll = track.scrollWidth - container.clientWidth;
-            
-            container.scrollLeft = scrollRatio * maxScroll;
-        }
-        
-        function handleMouseUp() {
-            isDragging = false;
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
-        }
-        
-        window.addEventListener('resize', updateScrollbar);
-        updateScrollbar();
     }
 });
