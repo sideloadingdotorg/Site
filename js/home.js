@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             document.addEventListener('mousemove', handleMouseMove);
             document.addEventListener('mouseup', handleMouseUp);
-            
-            e.preventDefault();
         });
         
         scrollbarTrack.addEventListener('click', (e) => {
