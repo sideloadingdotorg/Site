@@ -4,86 +4,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:site_name" content="SideLoading.org">
-    <meta name="theme-color" content="#8B5CF6">
-    <meta property="og:title" content="Home">
-    <meta property="og:description" content="Visit the unofficial sideloading site for all of your IOS needs..." />
-    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/logo.png"> <meta property="og:image:width" content="1100">
-    <meta property="og:image:height" content="1200">
+    <meta name="theme-color" content="#5865F2">
+    <meta property="og:title" content="The Ultimate Sideloading Hub">
+    <meta property="og:description" content="Unlock the full potential of your iOS device with our secure and reliable sideloading solutions. Explore guides, tools, and a thriving community.">
+    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Logo">
-    <title>Home</title>
+    <meta property="og:image:alt" content="SideLoading.org Logo and Tagline">
+    <title>Sideloading.org - Your Gateway to Unofficial iOS Apps</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5NVXoP+8bJ8I9PzM3q52hE6T+Gg4gKjJ0O5/V88/GqFqV18XpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header-left">
-                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                </button>
-            </div>
-            <div class="header-right">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
-                    <svg class="moon-icon" style="display: none;" viewBox="0 0 24 24"><path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/></svg>
-                </button>
-            </div>
-        </header>
-
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <h2 class="sidebar-title">Navigation</h2>
-                <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation"><svg viewBox="0 0 24 24"><path d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"/></svg></button>
-            </div>
-            <div class="sidebar-content">
-                <nav>
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-nav-item"><a href="index" class="sidebar-nav-link active">Home</a></li>
-                        <li class="sidebar-nav-item"><a href="signer" class="sidebar-nav-link">Signer</a></li>
-                        <li class="sidebar-nav-item"><a href="downloads" class="sidebar-nav-link">Downloads</a></li>
-                    </ul>
-                    <h3 class="sidebar-subheading">Other Links</h3>
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-nav-item"><a href="https://buy.sideloading.org" class="sidebar-nav-link" target="_blank">Shop</a></li>
+    <header class="main-header" id="mainHeader">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-text">SideLoading.org</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="#guides" class="nav-link">Guides</a></li>
+                        <li class="nav-item"><a href="#community" class="nav-link">Community</a></li>
+                        <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link button secondary-button">Shop</a></li>
                     </ul>
                 </nav>
+                <div class="header-actions">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </button>
+                    <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </header>
 
-        <main class="main-content">
-            <h1 class="title">sideloading.org</h1>
-            <p class="catchline">Your concierge for all things sideloading. Guides, resources, other projects and community support, all in one place.</p>
-            <a href="https://github.com/sideloadingdotorg/Site/releases/download/webclip/sideloading.org.mobileconfig" class="cta-button">Add To Home Screen</a>
-            <div class="introduction">
-                <div class="intro-content">
-                    <h2 class="intro-title">About Sideloading.org</h2>
-                    <p class="intro-text">We're here to revolutionize the way you think about sideloading. For a long time, sideloading has revolved around separate projects fighting for relevance and income, we are here to undo the damage caused by this and make development more peaceful.</p>
-                </div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="logo">
+                <span class="logo-text">SideLoading.org</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <nav>
+                <ul class="sidebar-nav">
+                    <li><a href="#home" class="sidebar-nav-link active">Home</a></li>
+                    <li><a href="#services" class="sidebar-nav-link">Services</a></li>
+                    <li><a href="#guides" class="sidebar-nav-link">Guides</a></li>
+                    <li><a href="#community" class="sidebar-nav-link">Community</a></li>
+                    <li><a href="#reviews" class="sidebar-nav-link">Reviews</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-buttons">
+                <a href="#" class="button primary-button">Signer</a>
+                <a href="#" class="button secondary-button">Shop</a>
             </div>
-            <div class="carousel-section">
-                <h2 class="carousel-title">Guides & Information</h2>
-                <div class="carousel-container" id="carouselContainer">
-                    <div class="carousel-track" id="carouselTrack">
-                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3 class="guide-title">Learn the Trade</h3><p class="guide-description">Sideloading has taken time to perfect, even longer to understand. Our guides make it simple.</p><a href="guide" class="guide-button">Read Guide</a></div></div>
-                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24">
-                                <path d="M8 7 L4 11 L8 15" stroke="var(--bg-primary)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                <path d="M13 6 L11.5 18" stroke="var(--bg-primary)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                <path d="M16 7 L20 11 L16 15" stroke="var(--bg-primary)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            </svg></div><h3 class="guide-title">GitHub</h3><p class="guide-description">We are FULLY transparent about whats in our wheel house...</p><a href="https://github.com/sideloadingdotorg/Site/" class="guide-button">View Repo</a></div></div>
-                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><h3 class="guide-title">Community Support</h3><p class="guide-description">If you've read the guides and still need help, our community is here for you!</p><a href="https://discord.gg/tqAZcA5PTr" class="guide-button">Join Our Server!</a></div></div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+        <section class="hero-section" id="home">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="highlight-text">Unlock</span> Your iOS Device's Full Potential
+                    </h1>
+                    <p class="hero-subtitle">
+                        Explore a world of uncensored apps and seamless experiences. Your trusted gateway to secure and reliable sideloading is here.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="button primary-button animate__animated animate__zoomIn">Get Started</a>
+                        <a href="https://github.com/sideloadingdotorg/Site" class="button secondary-button animate__animated animate__zoomIn animate__delay-1s">View on GitHub</a>
                     </div>
                 </div>
-                <div class="carousel-scrollbar"><div class="carousel-scrollbar-track"><div class="carousel-scrollbar-thumb" id="scrollbarThumb"></div></div></div>
+                <div class="hero-image-container">
+                    <div class="hero-image animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="https://sideloadingdotorg.github.io/Site/images/hero-phone.png" alt="A stylized image of an iPhone with sideloaded apps">
+                    </div>
+                </div>
             </div>
-        </main>
-    </div>
+        </section>
+        <section class="services-section" id="services">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Sideloading Services</h2>
+                <p class="section-subtitle">We provide the tools and resources you need to get the most out of your device.</p>
+                <div class="services-grid">
+                    <div class="service-card animate__animated animate__fadeInUp animate__delay-0-5s">
+                        <div class="service-icon"><i class="fas fa-fingerprint"></i></div>
+                        <h3 class="service-title">Secure Signing</h3>
+                        <p class="service-description">Easily sign and install apps with our reliable certificate signing service. Your privacy is our priority.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="service-icon"><i class="fas fa-download"></i></div>
+                        <h3 class="service-title">Vast Library</h3>
+                        <p class="service-description">Access a curated library of the latest and greatest IPA files, updated regularly for your convenience.</p>
+                        <a href="#" class="service-link">Browse Apps <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card animate__animated animate__fadeInUp animate__delay-1-5s">
+                        <div class="service-icon"><i class="fas fa-users-line"></i></div>
+                        <h3 class="service-title">Active Community</h3>
+                        <p class="service-description">Join our Discord server to connect with fellow sideloaders, get help, and stay up-to-date.</p>
+                        <a href="#" class="service-link">Join Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="guides-section" id="guides">
+            <div class="container">
+                <h2 class="section-title">Master the Sideloading Trade</h2>
+                <p class="section-subtitle">Our in-depth guides and tutorials make sideloading accessible to everyone, from beginners to experts.</p>
+                <div class="guides-carousel-container">
+                    <div class="guides-carousel">
+                        <div class="guides-track">
+                            <div class="guide-card">
+                                <div class="guide-image-container">
+                                    <img src="https://via.placeholder.com/600x400.png?text=Getting+Started" alt="An illustration of a beginner's guide">
+                                </div>
+                                <div class="guide-content">
+                                    <h3 class="guide-title">Guide to Sideloading</h3>
+                                    <p class="guide-description">A comprehensive guide for those new to the world of iOS sideloading. We walk you through every step.</p>
+                                    <a href="#" class="button guide-button">Read Guide</a>
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <div class="guide-image-container">
+                                    <img src="https://via.placeholder.com/600x400.png?text=Advanced+Tips" alt="An illustration of advanced tips">
+                                </div>
+                                <div class="guide-content">
+                                    <h3 class="guide-title">Advanced Signing Tips</h3>
+                                    <p class="guide-description">Learn advanced techniques for signing and managing your apps like a true professional.</p>
+                                    <a href="#" class="button guide-button">Read Guide</a>
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <div class="guide-image-container">
+                                    <img src="https://via.placeholder.com/600x400.png?text=Troubleshooting" alt="An illustration of troubleshooting">
+                                </div>
+                                <div class="guide-content">
+                                    <h3 class="guide-title">Common Issues & Fixes</h3>
+                                    <p class="guide-description">Find solutions to common problems and get your apps running smoothly again.</p>
+                                    <a href="#" class="button guide-button">Read Guide</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-navigation">
+                        <button class="nav-arrow prev-arrow" id="prevGuide"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-arrow next-arrow" id="nextGuide"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="reviews-section" id="reviews">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Don't just take our word for it. Hear from our community members about their experience.</p>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-wrapper">
+                                <img src="#" alt="Spartan's profile picture" class="review-avatar">
+                            </div>
+                            <div class="review-info">
+                                <span class="review-username">spartan</span>
+                                <div class="review-stars">
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">blank</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-wrapper">
+                                <img src="#" alt="User profile picture" class="review-avatar">
+                            </div>
+                            <div class="review-info">
+                                <span class="review-username">Alex D.</span>
+                                <div class="review-stars">
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star-half-alt filled-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">"I've tried a few other sideloading services, but this one is by far the most reliable. The guides are super helpful, and the community is amazing. Highly recommend!"</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar-wrapper">
+                                <img src="#" alt="User profile picture" class="review-avatar">
+                            </div>
+                            <div class="review-info">
+                                <span class="review-username">Chris P.</span>
+                                <div class="review-stars">
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                    <i class="fas fa-star filled-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">"The signing tool is incredibly fast and easy to use. I was able to get my app installed in minutes with no fuss. A great resource for anyone looking to sideload."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <span class="logo-text">SideLoading.org</span>
+                    <p class="footer-description">Your ultimate hub for all things sideloading. Secure, reliable, and community-driven.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#guides">Guides</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SideLoading.org. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
     <script src="js/general.js"></script>
     <script src="js/home.js"></script>
 </body>
