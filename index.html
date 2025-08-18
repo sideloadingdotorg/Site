@@ -7,8 +7,7 @@
     <meta name="theme-color" content="#8B5CF6">
     <meta property="og:title" content="Home">
     <meta property="og:description" content="Visit the unofficial sideloading site for all of your IOS needs..." />
-    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/logo.png">
-    <meta property="og:image:width" content="1100">
+    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/logo.png"> <meta property="og:image:width" content="1100">
     <meta property="og:image:height" content="1200">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:alt" content="Logo">
@@ -22,132 +21,68 @@
 <body>
     <div class="container">
         <header class="header">
-            <a href="index.html" class="logo-link">
-                <img src="https://sideloadingdotorg.github.io/Site/images/logo.png" alt="SideLoading.org Logo" class="logo">
-                <span class="logo-text">SideLoading.org</span>
-            </a>
-            <nav class="desktop-nav">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="waiting.html" class="nav-link">Waiting Room</a>
-                <a href="guides.html" class="nav-link">Guides</a>
-                <a href="https://sideloadingdotorg.github.io/Store/index.html" class="nav-link">Store</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
-                <a href="about.html" class="nav-link">About</a>
-            </nav>
-            <div class="theme-and-hamburger">
-                <button id="themeToggle" class="theme-toggle">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
+            <div class="header-left">
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
                 </button>
-                <div class="hamburger-menu" id="hamburgerMenu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
+                    <svg class="moon-icon" style="display: none;" viewBox="0 0 24 24"><path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/></svg>
+                </button>
             </div>
         </header>
-        <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <a href="index.html" class="logo-link">
-                    <img src="https://sideloadingdotorg.github.io/Site/images/logo.png" alt="SideLoading.org Logo" class="logo">
-                </a>
-                <button id="sidebarClose" class="sidebar-close-button">&times;</button>
+                <h2 class="sidebar-title">Navigation</h2>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation"><svg viewBox="0 0 24 24"><path d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"/></svg></button>
             </div>
-            <nav class="sidebar-nav">
-                <a href="index.html" class="sidebar-nav-link active">Home</a>
-                <a href="waiting.html" class="sidebar-nav-link">Waiting Room</a>
-                <a href="guides.html" class="sidebar-nav-link">Guides</a>
-                <a href="https://sideloadingdotorg.github.io/Store/index.html" class="sidebar-nav-link">Store</a>
-                <a href="faq.html" class="sidebar-nav-link">FAQ</a>
-                <a href="about.html" class="sidebar-nav-link">About</a>
-            </nav>
-        </aside>
+            <div class="sidebar-content">
+                <nav>
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-nav-item"><a href="index" class="sidebar-nav-link active">Home</a></li>
+                        <li class="sidebar-nav-item"><a href="signer" class="sidebar-nav-link">Signer</a></li>
+                        <li class="sidebar-nav-item"><a href="downloads" class="sidebar-nav-link">Downloads</a></li>
+                    </ul>
+                    <h3 class="sidebar-subheading">Other Links</h3>
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-nav-item"><a href="https://buy.sideloading.org" class="sidebar-nav-link" target="_blank">Shop</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
         <main class="main-content">
-            <section class="hero-section">
-                <h1 class="hero-title">Welcome to Our Modern Site</h1>
-                <p class="hero-subtitle">Experience a new way of interacting with web content.</p>
-                <a href="#testimonials" class="cta-button">See What Customers Say</a>
-            </section>
-            <section class="features-section">
-                <h2 class="section-title">Why Choose Us?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                <path d="M2 17l10 5 10-5"></path>
-                                <path d="M2 12l10 5 10-5"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Innovative Design</h3>
-                        <p class="feature-description">Our modern approach to web design ensures a sexyy and intuitive user experience.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">Cross-Device Compatibility</h3>
-                        <p class="feature-description">The site is fully responsive, looking great on desktops, tablets, and mobile devices.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 21.5c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"></path>
-                                <path d="M16 16l-4-4-4 4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="feature-title">High Performance</h3>
-                        <p class="feature-description">Optimized for speed and efficiency, providing a seamless browsing experience.</p>
+            <h1 class="title">sideloading.org</h1>
+            <p class="catchline">Your concierge for all things sideloading. Guides, resources, other projects and community support, all in one place.</p>
+            <a href="https://github.com/sideloadingdotorg/Site/releases/download/webclip/sideloading.org.mobileconfig" class="cta-button">Add To Home Screen</a>
+            <div class="introduction">
+                <div class="intro-content">
+                    <h2 class="intro-title">About Sideloading.org</h2>
+                    <p class="intro-text">We're here to revolutionize the way you think about sideloading. For a long time, sideloading has revolved around separate projects fighting for relevance and income, we are here to undo the damage caused by this and make development more peaceful.</p>
+                </div>
+            </div>
+            <div class="carousel-section">
+                <h2 class="carousel-title">Guides & Information</h2>
+                <div class="carousel-container" id="carouselContainer">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3 class="guide-title">Learn the Trade</h3><p class="guide-description">Sideloading has taken time to perfect, even longer to understand. Our guides make it simple.</p><a href="guide" class="guide-button">Read Guide</a></div></div>
+                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24">
+                                <path d="M8 7 L4 11 L8 15" stroke="var(--bg-primary)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                <path d="M13 6 L11.5 18" stroke="var(--bg-primary)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                <path d="M16 7 L20 11 L16 15" stroke="var(--bg-primary)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </svg></div><h3 class="guide-title">GitHub</h3><p class="guide-description">We are FULLY transparent about whats in our wheel house...</p><a href="https://github.com/sideloadingdotorg/Site/" class="guide-button">View Repo</a></div></div>
+                        <div class="carousel-slide"><div class="guide-card"><div class="guide-icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><h3 class="guide-title">Community Support</h3><p class="guide-description">If you've read the guides and still need help, our community is here for you!</p><a href="https://discord.gg/tqAZcA5PTr" class="guide-button">Join Our Server!</a></div></div>
                     </div>
                 </div>
-            </section>
-            <section class="testimonials-section" id="testimonials">
-                <h2 class="section-title">What Customers Say</h2>
-                <div class="testimonial-carousel-container">
-                    <div class="testimonial-carousel-track">
-                        <div class="testimonial-card">
-                            <img src="#" alt="Spartan" class="testimonial-avatar">
-                            <h3 class="testimonial-name">Spartan</h3>
-                            <p class="testimonial-review">"Blank"</p>
-                        </div>
-                        <div class="testimonial-card">
-                            <img src="#" alt="User 2" class="testimonial-avatar">
-                            <h3 class="testimonial-name">Spartan</h3>
-                            <p class="testimonial-review">"Blank"</p>
-                        </div>
-                        <div class="testimonial-card">
-                            <img src="#" alt="User 3" class="testimonial-avatar">
-                            <h3 class="testimonial-name">Spartan</h3>
-                            <p class="testimonial-review">"Blank"</p>
-                        </div>
-                    </div>
-                    <div class="carousel-navigation">
-                        <button class="carousel-nav-btn prev-btn">&larr;</button>
-                        <button class="carousel-nav-btn next-btn">&rarr;</button>
-                    </div>
-                </div>
-            </section>
+                <div class="carousel-scrollbar"><div class="carousel-scrollbar-track"><div class="carousel-scrollbar-thumb" id="scrollbarThumb"></div></div></div>
+            </div>
         </main>
-        <footer class="footer">
-            <p>&copy; 2025 Sideloading.org. All rights reserved.</p>
-        </footer>
     </div>
     <script src="js/general.js"></script>
     <script src="js/home.js"></script>
