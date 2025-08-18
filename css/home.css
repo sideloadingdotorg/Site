@@ -1,187 +1,216 @@
-.title {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 2rem;
+.hero-section {
+    background-color: var(--bg-primary);
+    position: relative;
+    padding-top: calc(var(--header-height) + var(--spacing-xl));
+    padding-bottom: var(--spacing-xl);
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.hero-title {
+    font-size: var(--h1-size);
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.1;
+    position: relative;
+    animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.highlight-text {
     background: var(--primary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: text-pop-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.catchline {
-    font-size: 1.25rem;
-    text-align: center;
+.hero-subtitle {
+    font-size: var(--h3-size);
+    font-weight: 300;
     color: var(--text-secondary);
-    margin-top: 1rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fade-in-up 0.6s ease-out forwards;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.4;
+    animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation-delay: 0.2s;
-    opacity: 0;
 }
 
-.cta-button {
-    display: block;
-    width: fit-content;
-    margin: 2rem auto 3rem auto;
-    padding: 1rem 2.5rem;
-    background: var(--primary-gradient);
-    color: var(--bg-primary);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow);
-    text-align: center;
-    animation: scale-in 0.5s ease-out forwards;
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation-delay: 0.4s;
-    opacity: 0;
 }
 
-.cta-button:hover {
-    background: var(--primary-gradient-hover);
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.3);
-}
-
-.why-choose-us-section {
-    margin-top: 6rem;
-}
-
-.why-choose-title {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    animation: fade-in-up 0.6s ease-out forwards;
-    opacity: 0;
-    animation-delay: 0.6s;
-}
-
-.why-choose-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.why-choose-card {
-    background: var(--bg-secondary);
-    border-radius: 12px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    box-shadow: var(--card-shadow);
-    animation: card-pop-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    opacity: 0;
-}
-
-.why-choose-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: var(--shadow);
-    border-color: var(--primary-color);
-}
-
-.why-choose-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    line-height: 1;
-}
-
-.why-choose-heading {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.why-choose-description {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-.carousel-section {
-    margin-top: 6rem;
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     position: relative;
 }
 
-.carousel-title {
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2rem;
-    animation: fade-in-up 0.6s ease-out forwards;
-    opacity: 0;
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    animation: floating 5s ease-in-out infinite;
+    transform: translateY(0);
 }
 
-.carousel-container {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 1.5rem;
-    scrollbar-width: none;
-    cursor: grab;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: -20px;
-    margin-right: -20px;
+.hero-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
-.carousel-container::-webkit-scrollbar {
-    display: none;
+/* Services Section */
+.services-section {
+    background-color: var(--bg-secondary);
 }
 
-.carousel-track {
-    display: flex;
-    gap: 2rem;
-    transition: transform 0.3s ease;
-    width: fit-content;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
 
-.carousel-slide {
-    flex: 0 0 auto;
-    width: 320px;
-    scroll-snap-align: start;
-}
-
-.guide-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    height: 100%;
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    animation: fade-in-up 0.6s ease-out forwards;
-    opacity: 0;
+    transition: var(--transition-slow);
+    box-shadow: var(--card-shadow);
 }
 
-.guide-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: var(--shadow);
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(88, 101, 242, 0.2);
     border-color: var(--primary-color);
 }
 
-.guide-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    animation: scaleIn 0.8s ease-out both;
 }
 
-.guide-icon svg {
-    width: 48px;
-    height: 48px;
-    fill: var(--text-primary);
+.service-title {
+    font-size: var(--h3-size);
+    margin-bottom: var(--spacing-xs);
+}
+
+.service-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+.service-link i {
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover {
+    transform: translateX(5px);
+}
+
+/* Guides Section */
+.guides-section {
+    background-color: var(--bg-tertiary);
+}
+
+.guides-carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.guides-carousel {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+.guides-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    gap: var(--spacing-md);
+}
+
+.guide-card {
+    flex-shrink: 0;
+    width: 320px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-slow);
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.guide-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.guide-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.guide-card:hover .guide-image-container img {
+    transform: scale(1.1);
+}
+
+.guide-content {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .guide-title {
     font-size: 1.25rem;
-    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
@@ -189,119 +218,98 @@
     font-size: 0.9rem;
     color: var(--text-secondary);
     flex-grow: 1;
+    margin-bottom: var(--spacing-sm);
 }
 
 .guide-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--primary-gradient);
-    color: var(--bg-primary);
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: 50px;
-    margin-top: 1.5rem;
-    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: auto;
 }
 
-.guide-button:hover {
-    background: var(--primary-gradient-hover);
-    transform: translateY(-2px);
-}
-
-.carousel-scrollbar {
+.carousel-navigation {
+    position: absolute;
+    top: 50%;
     width: 100%;
-    height: 10px;
-    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.nav-arrow {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.carousel-scrollbar-track {
-    width: 100%;
-    max-width: 500px;
-    height: 4px;
-    background-color: var(--border-color);
-    border-radius: 2px;
-    position: relative;
-    cursor: pointer;
-}
-
-.carousel-scrollbar-thumb {
-    height: 100%;
-    background: var(--primary-gradient);
-    border-radius: 2px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: background 0.3s ease;
-}
-
-.reviews-section {
-    margin-top: 6rem;
-}
-
-.reviews-title {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: 700;
+    transition: var(--transition-fast);
     color: var(--text-primary);
-    animation: fade-in-up 0.6s ease-out forwards;
-    opacity: 0;
+    font-size: 1.2rem;
+    pointer-events: auto;
+    box-shadow: var(--card-shadow);
 }
 
-.reviews-carousel-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding-bottom: 1.5rem;
-    cursor: grab;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: -20px;
-    margin-right: -20px;
+.nav-arrow:hover {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    transform: scale(1.1);
+    border-color: var(--primary-color);
 }
 
-.reviews-carousel-container::-webkit-scrollbar {
-    display: none;
+.prev-arrow {
+    transform: translateX(-50%);
 }
 
-.reviews-carousel-track {
-    display: flex;
-    gap: 2rem;
-    padding-bottom: 1rem;
-    min-width: fit-content;
+.next-arrow {
+    transform: translateX(50%);
+}
+
+.nav-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Reviews Section */
+.reviews-section {
+    background-color: var(--bg-primary);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
 }
 
 .review-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    width: 320px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
     box-shadow: var(--card-shadow);
-    position: relative;
-    overflow: hidden;
-    min-height: 220px;
-    animation: card-pop-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    opacity: 0;
+    transition: var(--transition-slow);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
 }
 
 .review-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-sm);
 }
 
 .review-avatar-wrapper {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     position: relative;
-    margin-right: 1rem;
+    margin-right: var(--spacing-sm);
 }
 
 .review-avatar {
@@ -310,7 +318,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--primary-color);
-    animation: pulse-avatar 2s infinite ease-in-out;
+    transition: border-color 0.3s ease;
 }
 
 .review-info {
@@ -319,131 +327,109 @@
 }
 
 .review-username {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
 }
 
 .review-stars {
     display: flex;
     gap: 0.25rem;
-}
-
-.review-stars .star {
-    font-size: 0.9rem;
+    color: gold;
 }
 
 .review-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    position: relative;
-    z-index: 2;
+    line-height: 1.5;
 }
 
-@keyframes fade-in-up {
+/* More Animations */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes slideInFromRight {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(50px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
-@keyframes scale-in {
+@keyframes fadeInScale {
     from {
         opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes text-pop-up {
-    0% {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes card-pop-in {
-    0% {
         transform: scale(0.95);
-        opacity: 0;
     }
-    100% {
-        transform: scale(1);
+    to {
         opacity: 1;
+        transform: scale(1);
     }
 }
 
-@keyframes pulse-avatar {
-    0% {
-        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
-    }
+.service-card {
+    animation: fadeInScale 0.8s ease-out both;
 }
 
-.why-choose-card:nth-child(1) { animation-delay: 0.7s; }
-.why-choose-card:nth-child(2) { animation-delay: 0.9s; }
-.why-choose-card:nth-child(3) { animation-delay: 1.1s; }
-.why-choose-card:nth-child(4) { animation-delay: 1.3s; }
+.review-card {
+    animation: fadeInScale 0.8s ease-out both;
+}
 
-.carousel-title { animation-delay: 1.5s; }
-.guide-card:nth-child(1) { animation-delay: 1.7s; }
-.guide-card:nth-child(2) { animation-delay: 1.9s; }
-.guide-card:nth-child(3) { animation-delay: 2.1s; }
-.guide-card:nth-child(4) { animation-delay: 2.3s; }
-.guide-card:nth-child(5) { animation-delay: 2.5s; }
-.guide-card:nth-child(6) { animation-delay: 2.7s; }
+.guide-card {
+    animation: fadeInScale 0.8s ease-out both;
+}
 
-.reviews-title { animation-delay: 2.9s; }
-.review-card:nth-child(1) { animation-delay: 3.1s; }
-.review-card:nth-child(2) { animation-delay: 3.3s; }
-.review-card:nth-child(3) { animation-delay: 3.5s; }
-.review-card:nth-child(4) { animation-delay: 3.7s; }
+/* Specific delays for staggered animations */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
 
+.reviews-grid .review-card:nth-child(1) { animation-delay: 0.1s; }
+.reviews-grid .review-card:nth-child(2) { animation-delay: 0.2s; }
+.reviews-grid .review-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-image-container {
+        justify-content: center;
+    }
+    .guides-carousel-container {
+        max-width: 100%;
+    }
+    .guides-carousel {
+        padding: 0 20px;
+    }
+    .carousel-navigation {
+        display: none;
+    }
+}
 
 @media (max-width: 768px) {
-    .title {
-        font-size: 2.5rem;
+    .reviews-grid {
+        grid-template-columns: 1fr;
     }
-
-    .catchline {
-        font-size: 1rem;
+    .guides-track {
+        flex-direction: column;
+        align-items: center;
     }
-
-    .cta-button {
-        padding: 0.8rem 2rem;
-    }
-
-    .why-choose-us-section {
-        margin-top: 4rem;
-    }
-
-    .why-choose-title,
-    .carousel-title,
-    .reviews-title {
-        font-size: 1.5rem;
-    }
-
-    .carousel-container,
-    .reviews-carousel-container {
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-left: -10px;
-        margin-right: -10px;
+    .guide-card {
+        width: 100%;
+        max-width: 400px;
     }
 }
