@@ -15,22 +15,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const carouselData = [
         {
-            title: "ScriptBlox API",
-            iframeSrc: "https://scripts.sideloading.org",
-            description: "Browse and test Roblox scripts directly",
-            fullscreenUrl: "https://scripts.sideloading.org"
+            title: "ricehub",
+            iframeSrc: "",
+            description: "i forgot the url",
+            fullscreenUrl: ""
         },
         {
-            title: "Certificate Service",
-            iframeSrc: "https://certs.sideloading.org",
+            title: "eonhub",
+            iframeSrc: "https://eonhubapp.com",
             description: "View available certificates and status",
-            fullscreenUrl: "https://certs.sideloading.org"
+            fullscreenUrl: "https://eonhubapp.com"
         },
         {
-            title: "Repository Browser",
-            iframeSrc: "ipas",
-            description: "Browse available IPA repositories",
-            fullscreenUrl: "ipas"
+            title: "WSF",
+            iframeSrc: "https://wsfteam.xyz",
+            description: "a guide based website (pretty cool)",
+            fullscreenUrl: "https://wsfteam.xyz"
         }
     ];
     
