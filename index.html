@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="SideLoading.org">
+    <meta name="theme-color" content="#8B5CF6">
+    <meta property="og:title" content="SideLoading.org - Your iOS Sideloading Destination">
+    <meta property="og:description" content="Discover, download, and install iOS apps, certificates, and DNS profiles. Your trusted source for iOS sideloading." />
+    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/logo.png">
+    <meta property="og:image:width" content="1100">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Logo">
+    <title>SideLoading.org - Your iOS Sideloading Destination</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="navbar-overlay" id="navbarOverlay"></div>
+    <nav class="slide-navbar" id="slideNavbar">
+      <div class="navbar-header">
+        <h2>Navigation</h2>
+        <button class="navbar-close" id="navbarClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="index" class="active"><i class="fa-solid fa-home"></i>Home</a></li>
+        <li><a href="downloads"><i class="fa-solid fa-download"></i>Downloads</a></li>
+        <li><a href="guides"><i class="fa-solid fa-book"></i>Guides</a></li>
+        <li><a href="signer"><i class="fa-solid fa-signature"></i>Signer</a></li>
+        <li><a href="https://buy.sideloading.org" class="external-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-shopping-cart"></i>Purchase</a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+    </button>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-cloud-sun"></i>
+        <i class="fa-solid fa-cloud-moon"></i>
+    </button>
+
+    <main class="main-content">
+        <section class="section tuff-section">
+            <div class="container-narrow">
+                <h1 class="section-title tuff-title">Sideloading.org</h1>
+                <p class="section-subtitle tuff-description">
+                    Your Concierge To Everything Sideloading... And More
+                </p>
+                <div class="tuff-actions text-center">
+                    <a href="https://github.com/sideloadingdotorg/Site/releases/download/webclip/sideloading.org.mobileconfig" class="btn btn-primary hero-btn">
+                        <i class="fa-solid fa-rocket"></i>
+                        Get Started
+                    </a>
+                    <a href="guides" class="btn btn-secondary hero-btn">
+                        <i class="fa-solid fa-book"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section features-section">
+            <div class="container">
+                <h2 class="section-title">What We Offer</h2>
+                <div class="grid grid-auto-fit">
+                    <div class="card text-center">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-folder-tree"></i>
+                        </div>
+                        <h3 class="card-title">IPA Repositories</h3>
+                        <p class="card-text">Browse & Download Freshly Updated IPA'S Via Other Repositories</p>
+                        <a href="ipas" class="card-link">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Browse Apps
+                        </a>
+                    </div>
+
+                    <div class="card text-center">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="card-title">Nomad DNS</h3>
+                        <p class="card-text">Using a DNS allows you to use revoked Certificates, just be careful on which profile your using.</p>
+                        <a href="https://github.com/sideloadingdotorg/Site/releases/download/DNS/Nomad.mobileconfig" class="card-link">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Configure DNS
+                        </a>
+                    </div>
+
+                    <div class="card text-center">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="card-title">Community Support</h3>
+                        <p class="card-text">Still Confused? Something Not Right? Let Us Know!</p>
+                        <a href="https://discord.gg/tqAZcA5PTr" class="card-link external-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="stats-container">
+                    <div class="grid grid-4 stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">35</div>
+                            <div class="stat-label">Repositories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Free</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">365</div>
+                            <div class="stat-label">Days active</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="JavaScript/shared.js"></script>
+</body>
+</html>

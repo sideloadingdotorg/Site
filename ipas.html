@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="SideLoading.org">
+    <meta name="theme-color" content="#8B5CF6">
+    <meta property="og:title" content="Repositories">
+    <meta property="og:description" content="Browse and download from sideloading.org's repositories..." />
+    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/images/logo.png">
+    <meta property="og:image:width" content="1100">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Logo">
+    <title>Repositories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="navbar-overlay" id="navbarOverlay"></div>
+    <nav class="slide-navbar" id="slideNavbar">
+      <div class="navbar-header">
+        <h2>Navigation</h2>
+        <button class="navbar-close" id="navbarClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="index"><i class="fa-solid fa-home"></i>Home</a></li>
+        <li><a href="downloads" class="active"><i class="fa-solid fa-download"></i>Downloads</a></li>
+        <li><a href="guides"><i class="fa-solid fa-book"></i>Guides</a></li>
+        <li><a href="signer"><i class="fa-solid fa-signature"></i>Signer</a></li>
+        <li><a href="https://buy.sideloading.org" class="external-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-shopping-cart"></i>Purchase</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+    </button>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-cloud-sun"></i>
+        <i class="fa-solid fa-cloud-moon"></i>
+    </button>
+
+    <main class="main-content">
+            <div class="container">
+                <h1 class="section-title">Repositories</h1>
+                <p class="section-subtitle">Browse and download from various GitHub repos</p>
+                
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="repoSearch" class="search-input" placeholder="Search repositories and apps..." autocomplete="off">
+                        <button class="search-clear" id="repoSearchClear" style="display: none;">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="search-results-info" id="searchResultsInfo" style="display: none;">
+                        <span id="searchResultsCount">0</span> matches found.
+                    </div>
+                </div>
+            </div>
+
+            <div class="repo-grid" id="repoGrid">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p>Give us a moment...</p>
+                </div>
+            </div>
+
+            <div class="modal" id="repoModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="modalTitle">Repository Apps</h2>
+                        <button class="modal-close" id="modalClose">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                
+                    <div class="modal-body" id="modalBody">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<script src="JavaScript/ipas.js"></script>
+<script src="JavaScript/shared.js"></script>
+</body>
+</html> 

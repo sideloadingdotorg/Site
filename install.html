@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="SideLoading.org">
+    <meta name="theme-color" content="#8B5CF6">
+    <meta property="og:title" content="Download">
+    <meta property="og:description" content="you cant share this window btw its based on you" />
+    <title>Downloading...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/install.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-cloud-sun"></i>
+        <i class="fa-solid fa-cloud-moon"></i>
+    </button>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="file-name" id="fileName">Loading file information...</div>
+                    <div class="file-meta">
+                        <div class="file-source" id="fileSource">Source: sideloading.org</div>
+                        <div class="file-size" id="fileSize" style="display: none;">
+                            <span class="size-label">File size:</span>
+                            <span class="size-value" id="sizeValue">Calculating...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="confirmDownload">
+                            <i class="fa-solid fa-download"></i>
+                            Download
+                        </button>
+                        <button class="btn btn-secondary" id="copyUrl">
+                            <i class="fa-solid fa-link"></i>
+                            Copy URL
+                        </button>
+                        <button class="btn btn-secondary" id="cancelDownload" onclick="window.close()">
+                            <i class="fa-solid fa-xmark"></i>
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <div class="card">
+                    <div class="help-header">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h3 class="card-title">Help & Instructions</h3>
+                    </div>
+                    <div class="help-content" id="helpContent">
+                        <p class="card-text">nothings here atm, might be our fault</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="downloadProgress" style="display: none;">
+            <div class="container">
+                <div class="card">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="downloadComplete" style="display: none;">
+            <div class="container">
+                <div class="card text-center">
+                    <div class="success-icon">
+                        <i class="fa-solid fa-check-circle"></i>
+                    </div>
+                    <h3 class="card-title">Download Complete!</h3>
+                    <p class="card-text">Your file has been downloaded successfully.</p>
+                    <div class="completion-actions">
+                        <button class="btn btn-primary" onclick="window.close()">
+                            <i class="fa-solid fa-xmark"></i>
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JavaScript/install.js"></script>
+    <script src="JavaScript/shared.js"> 
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download iOS apps, certificates, and DNS profiles from SideLoading.org">
+    <meta name="keywords" content="iOS, sideloading, apps, download, certificates, DNS">
+    <meta name="author" content="SideLoading.org">
+    <meta name="theme-color" content="#8B5CF6">
+    <meta property="og:title" content="Downloads - SideLoading.org">
+    <meta property="og:description" content="Download iOS apps, certificates, and DNS profiles safely and securely">
+    <meta property="og:image" content="https://sideloadingdotorg.github.io/Site/files/logo.png">
+    <meta property="og:image:width" content="1100">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Logo">
+    <title>Downloads - SideLoading.org</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/downloads.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="navbar-overlay" id="navbarOverlay"></div>
+    <nav class="slide-navbar" id="slideNavbar">
+      <div class="navbar-header">
+        <h2>Navigation</h2>
+        <button class="navbar-close" id="navbarClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="index"><i class="fa-solid fa-home"></i>Home</a></li>
+        <li><a href="downloads" class="active"><i class="fa-solid fa-download"></i>Downloads</a></li>
+        <li><a href="guides"><i class="fa-solid fa-book"></i>Guides</a></li>
+        <li><a href="signer"><i class="fa-solid fa-signature"></i>Signer</a></li>
+        <li><a href="https://buy.sideloading.org" class="external-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-shopping-cart"></i>Purchase</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+    </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-cloud-sun"></i>
+        <i class="fa-solid fa-cloud-moon"></i>
+    </button>
+
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <h1 class="section-title">Downloads</h1>
+                <p class="section-subtitle">Access iOS apps, certificates, and DNS profiles for your sideloading needs</p>
+            </div>
+        </section>
+
+        <section class="section" id="ios-section">
+            <div class="container">
+                
+                <div class="grid grid-auto-fit">
+                    <div class="card text-center">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-folder-tree"></i>
+                        </div>
+                        <h3 class="card-title">IPA Repositories</h3>
+                        <p class="card-text">Browse & Download Freshly Updated IPA'S Via Other Repositories</p>
+                        <a href="ipas" class="card-link">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Browse
+                        </a>
+                    </div>
+
+                    <div class="card text-center">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h3 class="card-title">Certificates</h3>
+                        <p class="card-text">Free Certs Which Deter Apple From Revoking Your IPA's</p>
+                        <a href="https://certs.sideloading.org" class="card-link">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            View
+                        </a>
+                    </div>
+
+                    <div class="card text-center">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="card-title">Roblox Scripts</h3>
+                        <p class="card-text">Regularly Updated Scripts via The ScriptBlox API</p>
+                        <a href="https://scripts.sideloading.org" class="card-link">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Try It Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Alternatives</h2>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <div class="embed-container">
+                                <div class="embed-header">
+                                    <h3 class="card-title" id="embedTitle"></h3>
+                                    <button class="fullscreen-btn" id="fullscreenBtn" title="Open in full screen">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </button>
+                                </div>
+                                <div class="embed-frame">
+                                    <iframe id="embedIframe" 
+                                            src="" 
+                                            title="" 
+                                            frameborder="0" 
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <p class="card-text" id="embedDescription"></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="carousel-nav">
+                        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous slide">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next slide">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                
+                    <div class="carousel-indicators" id="carouselIndicators">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="JavaScript/shared.js"></script>
+    <script src="JavaScript/downloads.js"></script>
+</body>
+</html>
